@@ -9,6 +9,25 @@
 
 <section id="outputContainer" class="container"></section>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('inputForm').addEventListener('submit', async (event) => {
+        // Prevent the form from being submitted to the server
+        event.preventDefault();
+
+        // Get the value from the input field
+        let url = document.getElementById('inputUrl').value;
+
+        // Make a request to the API
+        let response = await fetch(`https://api.wp-detector.com/index.php?url=${encodeURIComponent(url)}`);
+        let data = await response.json();
+
+        // Display the result in the output container
+        document.getElementById('outputContainer').textContent = data.wordpress === 'yes' ? 'This website uses WordPress' : 'This website does not use WordPress';
+    });
+});
+</script>
+
 <style>
   .container {
     text-align: center;
