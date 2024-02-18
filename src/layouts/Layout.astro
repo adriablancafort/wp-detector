@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/wp-detector-favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/wordpress-detector-favicon.svg"
+    />
+    <link rel="manifest" href="/manifest.json" />
     <title>
-      WordPress Detector - Find out which WordPress theme and plugins any
-      website is using
+      WordPress Theme and Plugin Detector - Find out which WordPress theme and
+      plugin any website uses
     </title>
     <meta
       name="description"
       content="Just enter any website URL and WordPress Detector will tell you which WordPress theme and WordPress plugins it is using and much more!"
     />
-    <meta name="generator" content={Astro.generator} />
   </head>
   <body>
     <slot />
@@ -65,3 +69,11 @@
     background-color: #2544ce;
   }
 </style>
+
+<script>
+  window.addEventListener("load", () => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js");
+    }
+  });
+</script>
