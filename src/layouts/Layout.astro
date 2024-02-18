@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/wp-detector-logo.svg" />
+        <title>WordPress Detector - Find out which WordPress theme and plugins any website is using</title>
+        <meta name="description" content="Just enter any website URL and WordPress Detector will tell you which WordPress theme and WordPress plugins it is using and much more!" />
+        <meta name="generator" content={Astro.generator} />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+@font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    src: url("./inter-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 700;
+    src: url("./inter-700.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "EB Garamond";
+    font-weight: 400;
+    src: url("./eb-garamond-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "EB Garamond";
+    font-weight: 400;
+    font-style: italic;
+    src: url("./eb-garamond-italic-400.woff2") format("woff2");
+}
+
+* {
+    font-family: "Inter";
+}
+
+h1, h2 {
+    font-family: "EB Garamond";
+}
+
+em {
+    font-family: "EB Garamond";
+    font-style: italic;
+}
+</style>
