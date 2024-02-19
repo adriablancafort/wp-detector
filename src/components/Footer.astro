@@ -1,5 +1,5 @@
 <footer>
-  <div class="container">
+  <div class="container container--footer">
     <a href="/">
       <img
         src="./wordpress-detector-logo.svg"
@@ -8,11 +8,26 @@
         height="50"
       />
     </a>
+    <span
+      >Developed by <a href="https://adriablancafort.com" target="_blank">Adrià Blancafort</a
+      ></span
+    >
   </div>
 </footer>
 
 <style>
   footer {
+    color: #fff;
     background-color: #23282d;
+  }
+
+  footer a {
+    color: white;
+  }
+
+  .container--footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>
