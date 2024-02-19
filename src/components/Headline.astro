@@ -1,24 +1,72 @@
-<section>
-  <h1>
-    WordPress Theme <em>Detector</em> and<br /> WordPress Plugin <em
-      >Detector</em>
+<section class="container container__headline">
+  <h1 class="headline--title">
+    WordPress <em>Theme</em> Detector and WordPress <em>Plugin</em> Detector
   </h1>
-  <p>
-    Just enter any website URL and <strong>WordPress Detector</strong> will tell
-    you which<br /> WordPress theme and WordPress plugins it is using and much more!
+  <p class="headline--description">
+    Just enter any website URL and WordPress Detector will tell you which
+    WordPress <strong>theme</strong> and WordPress <strong>plugins</strong> it is
+    using and much more!
   </p>
+
+  <img
+    class="headline--cards-image headline--cards-image__left"
+    src="./wordpress-detector-icon-192x192.png"
+    alt="Cards Image"
+  />
+  <img
+    class="headline--cards-image headline--cards-image__right"
+    src="./wordpress-detector-icon-192x192.png"
+    alt="Cards Image"
+  />
 </section>
 
 <style>
-  section {
+  .container__headline {
     text-align: center;
   }
 
-  h1 {
+  .headline--title {
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 900px;
     font-size: 4.5em;
   }
 
-  em {
-    font-size: 100%;
+  .headline--title em {
+    font-family: "EB Garamond";
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0.25rem;
+      left: -0.4rem;
+      right: -0.8rem;
+      height: 0.7rem;
+
+      z-index: -1;
+      background-image: url("/underline.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .headline--description {
+    margin: 0 auto;
+    max-width: 700px;
+    font-size: 1.2em;
+  }
+
+  .headline--cards-image {
+    position: absolute;
+    top: 80px;
+  }
+
+  .headline--cards-image__left {
+    left: 0;
+  }
+
+  .headline--cards-image__right {
+    right: 0;
   }
 </style>

@@ -1,12 +1,30 @@
-<header class="header">
-  <nav>
-    <img src="./wordpress-detector-logo.svg" alt="WordPress Detector Logo" width="285" height="62" />
-    <button>Install Extension</button>
+<header>
+  <nav class="container">
+    <a href="/">
+      <img
+        src="./wordpress-detector-logo.svg"
+        alt="WordPress Detector Logo"
+        width="228"
+        height="50"
+      />
+    </a>
+    <a href="#extension">
+      <button>Chrome Extension</button>
+    </a>
   </nav>
 </header>
 
 <style>
   header {
     background-color: #23282d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>
