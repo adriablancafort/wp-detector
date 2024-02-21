@@ -12,57 +12,76 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     if (oldUrl !== inputUrl) {
       const websiteName = formatWebsiteName(inputUrl);
-      outputContainer.innerHTML = analyzingResultsTitle(websiteName);
-      outputContainer.innerHTML += detectWpSkeleton;
+
+      // Wordpress Detected container
+      outputContainer.innerHTML = '';
+      const wpContainer = document.createElement('div');
+      outputContainer.appendChild(wpContainer);
+      wpContainer.innerHTML = analyzingResultsTitle(websiteName);
+      wpContainer.innerHTML += detectWpSkeleton; 
+
+      // Themes Detected container
+      const themesContainer = document.createElement('div');
+      outputContainer.appendChild(themesContainer);
+      themesContainer.innerHTML = analyzingThemesTitle(websiteName);
+      themesContainer.innerHTML += detectThemesSkeleton;
+
+      // Plugins Detected container
+      const pluginsContainer = document.createElement('div');
+      outputContainer.appendChild(pluginsContainer);
+      pluginsContainer.innerHTML = analyzingPluginsTitle(websiteName);
+      pluginsContainer.innerHTML += detectThemesSkeleton;
 
       if (validateUrl(inputUrl)) {
         oldUrl = inputUrl;
         inputUrl = sanatizeUrl(inputUrl); 
 
         apiRequest(inputUrl, "wp").then(data => {
-          outputContainer.innerHTML = showingResultsTitle(websiteName);      
+          wpContainer.innerHTML = showingResultsTitle(websiteName);      
 
           if (data.wp === "yes") {
-            outputContainer.innerHTML += detectWpSuccess(websiteName);
-
-            const themesContainer = document.createElement('div');
-            outputContainer.appendChild(themesContainer);
-            themesContainer.innerHTML = analyzingThemesTitle(websiteName);
-            themesContainer.innerHTML += detectThemesSkeleton;
+            wpContainer.innerHTML += detectWpSuccess(websiteName);
 
             apiRequest(inputUrl, "themes").then(data => {
               themesContainer.innerHTML = detectThemesTitle(websiteName);
 
               if (data.themes) {
                 data.themes.forEach(theme => {
-                  themesContainer.innerHTML += detectThemesCard;
+                  themesContainer.innerHTML += detectThemesCard(theme);
                 });
               } else {
-                themesContainer.innerHTML += `No themes detected in ${websiteName}.`;
+                themesContainer.innerHTML += noThemesDetected(websiteName);
               }
             });
-
-            const pluginsContainer = document.createElement('div');
-            outputContainer.appendChild(pluginsContainer);
-            pluginsContainer.innerHTML = analyzingPluginsTitle(websiteName);
-            pluginsContainer.innerHTML += detectPluginsSkeleton; 
-            pluginsContainer.innerHTML += detectPluginsSkeleton;
-            pluginsContainer.innerHTML += detectPluginsSkeleton; 
 
             apiRequest(inputUrl, "plugins").then(data => {
               pluginsContainer.innerHTML = detectPluginsTitle(websiteName);
 
               if (data.plugins) {
                 data.plugins.forEach(plugin => {
-                  pluginsContainer.innerHTML += detectPluginsCard;
+                  pluginsContainer.innerHTML += detectPluginsCard(plugin);
                 });
               } else {
-                  pluginsContainer.innerHTML += `No themes detected in ${websiteName}.`;
+                pluginsContainer.innerHTML += noPluginsDetected(websiteName);
               }
             });
 
           } else if (data.wp === "no") {
-            outputContainer.innerHTML += detectWpFail(websiteName);
+            wpContainer.innerHTML += detectWpFail(websiteName);
+            
+            apiRequest(inputUrl, "top-themes").then(data => {
+              themesContainer.innerHTML = topThemesTitle;         
+              data.themes.forEach(plugin => {
+                themesContainer.innerHTML += detectThemesCard(websiteName);
+              });
+            });
+
+            apiRequest(inputUrl, "top-plugins").then(data => {
+              pluginsContainer.innerHTML = topPluginsTitle;
+              data.plugins.forEach(plugin => {
+                pluginsContainer.innerHTML += detectPluginsCard(websiteName);
+              });
+            });
           }
 
         }).catch(() => {
@@ -72,7 +91,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       } else {
         oldUrl = '';
-        outputContainer.innerHTML += invalidUrl;
+        outputContainer.innerHTML = invalidUrl;
       }
     }
   });
@@ -139,12 +158,22 @@ const showingResultsTitle = (websiteName) => `
 
 const detectThemesTitle = (websiteName) => `
 <h3 class="input--section-title">
-  Detected <strong>themes</strong> in ${websiteName}:
+  Detected <strong>theme</strong> in ${websiteName}:
 </h3>`;
 
 const detectPluginsTitle = (websiteName) => `
 <h3 class="input--section-title">
   Detected <strong>plugins</strong> in ${websiteName}:
+</h3>`;
+
+const topThemesTitle = `
+<h3 class="input--section-title">
+  Top 5 most commonly detected <strong>themes</strong>:
+</h3>`;
+
+const topPluginsTitle = `
+<h3 class="input--section-title">
+  Top 5 most commonly detected <strong>plugins</strong>:
 </h3>`;
 
 const detectWpSuccess = (websiteName) => `
@@ -183,32 +212,18 @@ const detectWpSkeleton = `
   </div>
 </div>`;
 
-const detectThemesCard = `
+const detectThemesCard = (theme) => `
 <div class="card card--hover border">
   <img src="https://generatepress.com/wp-content/themes/generatepress/screenshot.png" alt="Theme Banner" class="card--banner" />
   <div class="card--info-container">
-    <h4 class="card--title">GeneratePress</h4>
-    <p>Author: <strong>Tom Usborne</strong></p>
+    <h4 class="card--title">${theme.title}</h4>
+    <p>Author: <strong>${theme.author}</strong></p>
     <p>Version: <span class="badge">3.4.0</span></p>
     <p>Website: <a href="https://generatepress.com">generatepress.com</a></p>
     <p>WordPress Version: <strong>5.2 or higher</strong></p>
     <p>Tested up To: <strong>6.3</strong></p>
     <p>PHP Version: <strong>5.6 or higher</strong></p>
-    <p class="card--description">
-      <strong>Description:</strong> GeneratePress is a lightweight WordPress theme
-      built with a focus on speed and usability. Performance is important to us,
-      which is why a fresh GeneratePress install adds less than 10kb (gzipped)
-      to your page size. We take full advantage of the block editor (Gutenberg),
-      which gives you more control over creating your content. If you use page
-      builders, GeneratePress is the right theme for you. It is completely compatible
-      with all major page builders, including Beaver Builder and Elementor. Thanks
-      to our emphasis on WordPress coding standards, we can boast full compatibility
-      with all well-coded plugins, including WooCommerce. GeneratePress is fully
-      responsive, uses valid HTML/CSS, and is translated into over 25 languages
-      by our amazing community of users. A few of our many features include 60+
-      color controls, powerful dynamic typography, 5 navigation locations, 5 sidebar
-      layouts, dropdown menus (click or hover), and 9 widget areas.
-    </p>
+    <p class="card--description"> ${theme.description}</p>
   </div>
   <div class="cart--read-more--container">
     <span class="cart--read-more">
@@ -242,31 +257,33 @@ const detectThemesSkeleton = `
   </div>
 </div>`;
 
-const detectPluginsCard = `
+const noThemesDetected = (websiteName) => `
+<div class="card border">
+  <div class="loading--image loading--skeleton"></div>
+  <div class="card--info-container">
+    <div class="card--title-container__plugin">
+      <div class="loading--icon card--icon loading--skeleton"></div>
+      <h4 class="card--title">No themes detected in ${websiteName}</h4>
+    </div>
+  </div>
+</div>`;
+
+const detectPluginsCard = (plugin) => `
 <div class="card card--hover border">
   <img src="https://ps.w.org/wordpress-seo/assets/banner-772x250.png?rev=2643727" alt="Plugin Banner" class="card--banner" />
   <div class="card--info-container">
     <div class="card--title-container__plugin">
       <img src="https://ps.w.org/wordpress-seo/assets/icon.svg?rev=2363699" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
-      <h4 class="card--title">Yoast SEO</h4>
+      <h4 class="card--title">${plugin.title}</h4>
     </div>
-    <p>Author: <strong>Team Yoast</strong></p>
+    <p>Author: <strong>${plugin.author}</strong></p>
     <p>Version: <span class="badge">22.0</span></p>
     <p>Website: <a href="https://yoast.com">yoast.com</a></p>
     <p>WordPress Version: <strong>6.3 or higher</strong></p>
     <p>Tested up To: <strong>6.4.3</strong></p>
     <p>PHP Version: <strong>7.2.5 or higher</strong></p>
     <p class="card--description">
-      <strong>Description:</strong>
-      Supercharge your website’s visibility and attract organic traffic with Yoast
-      SEO, the WordPress SEO plugin trusted by millions worldwide. With those millions
-      of users, we’ve definitely helped someone like you! Users of our plugin range
-      from owners of small-town bakeries and local physical stores to some of the
-      world’s largest and most influential organizations. And we’ve done this since
-      2008! Yoast SEO Free provides the essentials to kickstart your SEO, and the
-      Yoast SEO Premium plugin and its extensions unlock extra tools and functionality
-      to take your SEO to the next level.
-    </p>
+      <strong>Description:</strong> ${plugin.description}</p>
   </div>
   <div class="cart--read-more--container">
     <span class="cart--read-more">
@@ -301,5 +318,16 @@ const detectPluginsSkeleton = `
     <p class="loading-p loading--skeleton"></p>
     <p class="loading-p loading--skeleton"></p>
     <p class="loading-p loading--skeleton loading__80"></p>
+  </div>
+</div>`;
+
+const noPluginsDetected = (websiteName) => `
+<div class="card border">
+  <div class="loading--image loading--skeleton"></div>
+  <div class="card--info-container">
+    <div class="card--title-container__plugin">
+      <div class="loading--icon card--icon loading--skeleton"></div>
+      <h4 class="card--title">No plugins detected in ${websiteName}</h4>
+    </div>
   </div>
 </div>`;
