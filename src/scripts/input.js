@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const pluginsContainer = document.createElement('div');
       outputContainer.appendChild(pluginsContainer);
       pluginsContainer.innerHTML = analyzingPluginsTitle(websiteName);
-      pluginsContainer.innerHTML += detectThemesSkeleton;
+      pluginsContainer.innerHTML += detectPluginsSkeleton;
+      pluginsContainer.innerHTML += detectPluginsSkeleton;
+      pluginsContainer.innerHTML += detectPluginsSkeleton;
 
       if (validateUrl(inputUrl)) {
         oldUrl = inputUrl;
@@ -47,7 +49,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
               if (data.themes) {
                 data.themes.forEach(theme => {
-                  themesContainer.innerHTML += detectThemesCard(theme);
+                  const themeCard = document.createElement('div');
+                  themeCard.innerHTML = detectThemesCard(theme);
+                  if (theme.link) {
+                    themeCard.addEventListener('click', () => {
+                      window.open(theme.link, '_blank');
+                    });
+                  }
+                  themesContainer.appendChild(themeCard);
                 });
               } else {
                 themesContainer.innerHTML += noThemesDetected(websiteName);
@@ -59,7 +68,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
               if (data.plugins) {
                 data.plugins.forEach(plugin => {
-                  pluginsContainer.innerHTML += detectPluginsCard(plugin);
+                  const pluginCard = document.createElement('div');
+                  pluginCard.innerHTML = detectPluginsCard(plugin);
+                  if (plugin.link) {
+                    pluginCard.addEventListener('click', () => {
+                      window.open(plugin.link, '_blank');
+                    });
+                  }
+                  pluginsContainer.appendChild(pluginCard);
                 });
               } else {
                 pluginsContainer.innerHTML += noPluginsDetected(websiteName);
@@ -71,15 +87,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
             
             apiRequest(inputUrl, "top-themes").then(data => {
               themesContainer.innerHTML = topThemesTitle;         
-              data.themes.forEach(plugin => {
-                themesContainer.innerHTML += detectThemesCard(websiteName);
+              data.themes.forEach(theme => {
+                const themeCard = document.createElement('div');
+                themeCard.innerHTML = detectThemesCard(theme);
+                if (theme.link) {
+                  themeCard.addEventListener('click', () => {
+                    window.open(theme.link, '_blank');
+                  });
+                }
+                themesContainer.appendChild(themeCard);
               });
             });
 
             apiRequest(inputUrl, "top-plugins").then(data => {
               pluginsContainer.innerHTML = topPluginsTitle;
               data.plugins.forEach(plugin => {
-                pluginsContainer.innerHTML += detectPluginsCard(websiteName);
+                const pluginCard = document.createElement('div');
+                pluginCard.innerHTML = detectPluginsCard(plugin);
+                if (plugin.link) {
+                  pluginCard.addEventListener('click', () => {
+                    window.open(plugin.link, '_blank');
+                  });
+                }
+                pluginsContainer.appendChild(pluginCard);
               });
             });
           }
@@ -214,17 +244,20 @@ const detectWpSkeleton = `
 
 const detectThemesCard = (theme) => `
 <div class="card card--hover border">
-  <img src="https://generatepress.com/wp-content/themes/generatepress/screenshot.png" alt="Theme Banner" class="card--banner" />
+  <img src="${theme.banner}" alt="Theme Banner" class="card--banner" />
   <div class="card--info-container">
     <h4 class="card--title">${theme.title}</h4>
     <p>Author: <strong>${theme.author}</strong></p>
-    <p>Version: <span class="badge">3.4.0</span></p>
-    <p>Website: <a href="https://generatepress.com">generatepress.com</a></p>
-    <p>WordPress Version: <strong>5.2 or higher</strong></p>
-    <p>Tested up To: <strong>6.3</strong></p>
-    <p>PHP Version: <strong>5.6 or higher</strong></p>
-    <p class="card--description"> ${theme.description}</p>
+    <p>Version: <span class="badge">${theme.version}</span></p>
+    <p>Website: <a href="${theme.website}" target="_blank">${theme.sanatizedWebsite}</a></p>
+    <p>WordPress Version: <strong>${theme.reqWpVersion} or higher</strong></p>
+    <p>Tested up To: <strong>${theme.testedWpVersion}</strong></p>
+    <p>PHP Version: <strong>${theme.reqPhpVersion} or higher</strong></p>
+    <p class="card--description">
+      <strong>Description:</strong> ${theme.description}
+    </p>
   </div>
+  ${theme.link ? `
   <div class="cart--read-more--container">
     <span class="cart--read-more">
       <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" >
@@ -232,7 +265,7 @@ const detectThemesCard = (theme) => `
       </svg>
       Read more
     </span>
-  </div>
+  </div>` : ''}
 </div>`;
 
 const detectThemesSkeleton = `
@@ -270,21 +303,23 @@ const noThemesDetected = (websiteName) => `
 
 const detectPluginsCard = (plugin) => `
 <div class="card card--hover border">
-  <img src="https://ps.w.org/wordpress-seo/assets/banner-772x250.png?rev=2643727" alt="Plugin Banner" class="card--banner" />
+  <img src="${plugin.banner}" alt="Plugin Banner" class="card--banner" />
   <div class="card--info-container">
     <div class="card--title-container__plugin">
-      <img src="https://ps.w.org/wordpress-seo/assets/icon.svg?rev=2363699" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
+      <img src="${plugin.icon}" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
       <h4 class="card--title">${plugin.title}</h4>
     </div>
     <p>Author: <strong>${plugin.author}</strong></p>
-    <p>Version: <span class="badge">22.0</span></p>
-    <p>Website: <a href="https://yoast.com">yoast.com</a></p>
-    <p>WordPress Version: <strong>6.3 or higher</strong></p>
-    <p>Tested up To: <strong>6.4.3</strong></p>
-    <p>PHP Version: <strong>7.2.5 or higher</strong></p>
+    <p>Version: <span class="badge">${plugin.version}</span></p>
+    <p>Website: <a href="${plugin.website}" target="_blank">${plugin.sanatizedWebsite}</a></p>
+    <p>WordPress Version: <strong>${plugin.reqWpVersion} or higher</strong></p>
+    <p>Tested up To: <strong>${plugin.testedWpVersion}</strong></p>
+    <p>PHP Version: <strong>${plugin.reqPhpVersion} or higher</strong></p>
     <p class="card--description">
-      <strong>Description:</strong> ${plugin.description}</p>
+      <strong>Description:</strong> ${plugin.description}
+    </p>
   </div>
+  ${plugin.link ? `
   <div class="cart--read-more--container">
     <span class="cart--read-more">
       <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" >
@@ -292,7 +327,7 @@ const detectPluginsCard = (plugin) => `
       </svg>
       Read more
     </span>
-  </div>
+  </div>` : ''}
 </div>`;
 
 const detectPluginsSkeleton = `
