@@ -25,46 +25,54 @@ document.addEventListener("DOMContentLoaded", (event) => {
           if (data.wp === "yes") {
             outputContainer.innerHTML += detectWpSuccess(websiteName);
 
-            outputContainer.innerHTML += analyzingThemesTitle(websiteName);
-            outputContainer.innerHTML += detectThemesSkeleton;
-            outputContainer.innerHTML += analyzingPluginsTitle(websiteName);
-            outputContainer.innerHTML += detectPluginsSkeleton; 
+            const themesContainer = document.createElement('div');
+            outputContainer.appendChild(themesContainer);
+            themesContainer.innerHTML = analyzingThemesTitle(websiteName);
+            themesContainer.innerHTML += detectThemesSkeleton;
 
             apiRequest(inputUrl, "themes").then(data => {
-              outputContainer.innerHTML += detectThemesTitle(websiteName);
+              themesContainer.innerHTML = detectThemesTitle(websiteName);
 
               if (data.themes) {
                 data.themes.forEach(theme => {
-                  outputContainer.innerHTML += detectThemesCard;
+                  themesContainer.innerHTML += detectThemesCard;
                 });
               } else {
-                outputContainer.innerHTML += `No themes detected in ${websiteName}.`;
+                themesContainer.innerHTML += `No themes detected in ${websiteName}.`;
               }
             });
 
+            const pluginsContainer = document.createElement('div');
+            outputContainer.appendChild(pluginsContainer);
+            pluginsContainer.innerHTML = analyzingPluginsTitle(websiteName);
+            pluginsContainer.innerHTML += detectPluginsSkeleton; 
+            pluginsContainer.innerHTML += detectPluginsSkeleton;
+            pluginsContainer.innerHTML += detectPluginsSkeleton; 
+
             apiRequest(inputUrl, "plugins").then(data => {
-              outputContainer.innerHTML += detectThemesTitle(websiteName);
+              pluginsContainer.innerHTML = detectPluginsTitle(websiteName);
 
               if (data.plugins) {
                 data.plugins.forEach(plugin => {
-                  outputContainer.innerHTML += detectPluginsCard;
+                  pluginsContainer.innerHTML += detectPluginsCard;
                 });
               } else {
-                  outputContainer.innerHTML += `No themes detected in ${websiteName}.`;
+                  pluginsContainer.innerHTML += `No themes detected in ${websiteName}.`;
               }
             });
 
-          } else {
+          } else if (data.wp === "no") {
             outputContainer.innerHTML += detectWpFail(websiteName);
           }
 
         }).catch(() => {
+          outputContainer.innerHTML = showingResultsTitle(websiteName);  
           outputContainer.innerHTML += htmlRetrieveError(websiteName);
         });
 
       } else {
         oldUrl = '';
-        outputContainer.innerHTML = invalidUrl;
+        outputContainer.innerHTML += invalidUrl;
       }
     }
   });
