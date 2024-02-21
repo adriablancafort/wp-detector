@@ -19,22 +19,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
         oldUrl = inputUrl;
         inputUrl = sanatizeUrl(inputUrl); 
 
-        detectWp(inputUrl).then(data => {
-          outputContainer.innerHTML = showingResultsTitle(websiteName);
-          if (data.wordpress === "yes") {
+        apiRequest(inputUrl, "wp").then(data => {
+          outputContainer.innerHTML = showingResultsTitle(websiteName);      
+
+          if (data.wp === "yes") {
             outputContainer.innerHTML += detectWpSuccess(websiteName);
+
             outputContainer.innerHTML += analyzingThemesTitle(websiteName);
             outputContainer.innerHTML += detectThemesSkeleton;
-            outputContainer.innerHTML += detectThemesTitle(websiteName);
-            outputContainer.innerHTML += detectThemesCard;
             outputContainer.innerHTML += analyzingPluginsTitle(websiteName);
-            outputContainer.innerHTML += detectPluginsSkeleton;
-            outputContainer.innerHTML += detectPluginsTitle(websiteName);
-            outputContainer.innerHTML += detectPluginsCard;
-          } else if (data.wordpress === "no") {
+            outputContainer.innerHTML += detectPluginsSkeleton; 
+
+            apiRequest(inputUrl, "themes").then(data => {
+              outputContainer.innerHTML += detectThemesTitle(websiteName);
+
+              if (data.themes) {
+                data.themes.forEach(theme => {
+                  outputContainer.innerHTML += detectThemesCard;
+                });
+              } else {
+                outputContainer.innerHTML += `No themes detected in ${websiteName}.`;
+              }
+            });
+
+            apiRequest(inputUrl, "plugins").then(data => {
+              outputContainer.innerHTML += detectThemesTitle(websiteName);
+
+              if (data.plugins) {
+                data.plugins.forEach(plugin => {
+                  outputContainer.innerHTML += detectPluginsCard;
+                });
+              } else {
+                  outputContainer.innerHTML += `No themes detected in ${websiteName}.`;
+              }
+            });
+
+          } else {
             outputContainer.innerHTML += detectWpFail(websiteName);
           }
-        }).catch(error => {
+
+        }).catch(() => {
           outputContainer.innerHTML += htmlRetrieveError(websiteName);
         });
 
@@ -45,6 +69,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 });
+
+// Functions
+
+const formatWebsiteName = (url) => {
+  url = url.replace(/^(https?:\/\/)?/, '');
+  url = url.replace(/\/+$/, '');
+  url = url.slice(0).toLowerCase();
+  return url;
+}
+
+const validateUrl = (string) => {
+  let pattern = new RegExp('^(https?:\\/\\/)?' + // validate protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
+    '(\\#[-a-z\\d_]*)?$', 'i'); // validate fragment locator
+  return !!pattern.test(string);
+}
+
+const sanatizeUrl = (url) => {
+  url = url.replace(/\/+$/, ''); // Remove / at the end of the URL if needed
+  if (!/^https?:\/\//i.test(url)) { // Add https:// if needed
+    url = 'https://' + url;          
+  }
+  return url;
+};
+
+const apiRequest = (inputUrl, type) => {
+  return fetch(`https://api.wp-detector.com/index.php?url=${inputUrl}&type=${type}`)
+    .then(response => response.json());
+};
 
 // Elements
 
@@ -239,35 +295,3 @@ const detectPluginsSkeleton = `
     <p class="loading-p loading--skeleton loading__80"></p>
   </div>
 </div>`;
-
-// Functions
-
-const formatWebsiteName = (url) => {
-  url = url.replace(/^(https?:\/\/)?/, '');
-  url = url.replace(/\/+$/, '');
-  url = url.slice(0).toLowerCase();
-  return url;
-}
-
-const validateUrl = (string) => {
-  let pattern = new RegExp('^(https?:\\/\\/)?' + // validate protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
-    '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
-    '(\\#[-a-z\\d_]*)?$', 'i'); // validate fragment locator
-  return !!pattern.test(string);
-}
-
-const sanatizeUrl = (url) => {
-  url = url.replace(/\/+$/, ''); // Remove / at the end of the URL if needed
-  if (!/^https?:\/\//i.test(url)) { // Add https:// if needed
-    url = 'https://' + url;          
-  }
-  return url;
-};
-
-const detectWp = (inputUrl) => {
-  return fetch(`https://api.wp-detector.com/index.php?url=${inputUrl}`)
-    .then(response => response.json());
-};
