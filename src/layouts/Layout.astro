@@ -92,6 +92,16 @@
     margin: 0 auto;
     padding: 1rem 1.5rem;
   }
+
+  @media (max-width: 1000px) {
+    body {
+      font-size: 12px;
+    }
+
+    .hide-1000 {
+      display: none;
+    }
+  }
 </style>
 
 <script>
@@ -117,10 +127,13 @@
 
   // Google Analytics
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'G-HRVVKEVNRN');
+  gtag("config", "G-HRVVKEVNRN");
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRVVKEVNRN"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRVVKEVNRN"
+></script>
