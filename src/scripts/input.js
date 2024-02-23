@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         apiRequest(inputUrl, "wp").then(data => {
           wpContainer.innerHTML = showingResultsTitle(websiteName);      
 
-          if (data.wp === "yes") {
+          if (data.wp === true) {
             wpContainer.innerHTML += detectWpSuccess(websiteName);
 
             apiRequest(inputUrl, "themes").then(data => {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
               }
             });
 
-          } else if (data.wp === "no") {
+          } else if (data.wp === false) {
             wpContainer.innerHTML += detectWpFail(websiteName);
             
             apiRequest(inputUrl, "top-themes").then(data => {
