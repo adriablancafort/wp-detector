@@ -1,0 +1,70 @@
+---
+import Video from "./Video.astro";
+---
+
+<section class="container extension__container">
+  <h1 class="extension--title">
+    Get the <em>Browser Extension</em>!
+  </h1>
+  <p class="extension--description">
+    Install the WordPress Detector Brower Extension and know instantly the
+    WordPress <strong>theme</strong> and WordPress <strong>plugins</strong>
+    of every website you visit!
+  </p>
+  <a href="#">
+    <button class="button__extension">Get the extension</button>
+  </a>
+  <div class="extension--video">
+    <Video />
+  </div>
+</section>
+
+<style is:global>
+  .extension__container {
+    text-align: center;
+  }
+
+  .extension--title {
+    margin: 0 auto;
+    padding: 2rem 0;
+    max-width: 900px;
+    font-size: 4.5em;
+    animation: fade-in-up 0.6s ease-out;
+  }
+
+  .extension--title em {
+    font-family: "EB Garamond";
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0.25rem;
+      left: -0.4rem;
+      right: -0.8rem;
+      height: 1rem;
+
+      z-index: -1;
+      background-image: url("/underline.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .extension--description {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    font-size: 1.2em;
+    animation: fade-in-up 0.7s ease-out;
+  }
+
+  .button__extension {
+    animation: fade-in-up 0.8s ease-out;
+  }
+
+  .extension--video {
+    margin: 3rem 0;
+    animation: fade-in-up 0.9s ease-out;
+  }
+</style>
