@@ -155,7 +155,7 @@ const sanatizeUrl = (url) => {
 };
 
 const apiRequest = (inputUrl, type) => {
-  return fetch(`https://api.wp-detector.com/index.php?url=${inputUrl}&type=${type}`)
+  return fetch(`https://wp-detector.infinityfreeapp.com/?url=${inputUrl}&type=${type}`)
     .then(response => response.json());
 };
 
