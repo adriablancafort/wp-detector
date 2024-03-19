@@ -1,0 +1,51 @@
+<dialog>
+  <div class="extension-popup">
+    <h1>Detect Themes and Plugins of every website you visit!</h1>
+    <p>Install the WordPress Detector Browser Extension for free today!</p>
+    <button>Install Extension</button>
+  </div>
+</dialog>
+
+<style is:global>
+  .extension-popup {
+    position: fixed;
+    top: 0;
+    right: 150px;
+    width: 400px;
+    height: 400px;
+    background-color: #f8f8f8;
+    border: 1px solid #cbcbcb;
+    padding: 1rem;
+    animation: slide-down 0.2s ease-in-out;
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  const dialog = document.querySelector("dialog");
+
+  setTimeout(() => {
+    dialog.showModal();
+  }, 1500);
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+    } else {
+      window.open(
+        "https://chromewebstore.google.com/detail/wordpress-theme-detector/jdflfokckhmchfpokjmpcoblghjngjja",
+        "_blank"
+      );
+    }
+  });
+</script>
