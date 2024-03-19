@@ -2,7 +2,7 @@
   <div class="extension-popup">
     <h1>Detect Themes and Plugins of every website you visit!</h1>
     <p>Install the WordPress Detector Browser Extension for free today!</p>
-    <button>Install Extension</button>
+    <button>Get the Extension</button>
   </div>
 </dialog>
 
@@ -17,6 +17,10 @@
     border: 1px solid #cbcbcb;
     padding: 1rem;
     animation: slide-down 0.2s ease-in-out;
+  }
+
+  button:focus {
+    outline: none;
   }
 
   @keyframes slide-down {
@@ -42,10 +46,7 @@
     if (event.target === dialog) {
       dialog.close();
     } else {
-      window.open(
-        "/browser-extension",
-        "_blank"
-      );
+      window.open("/browser-extension", "_blank");
     }
   });
 </script>

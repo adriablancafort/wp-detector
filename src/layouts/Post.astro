@@ -1,0 +1,18 @@
+---
+const { frontmatter } = Astro.props;
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Extension from "../components/Extension.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <section class="container extension__container">
+    <h1>{frontmatter.title}</h1>
+    <h2>Post author: {frontmatter.author}</h2>
+    <p>{frontmatter.description}</p>
+    <slot />
+  </section>
+  <Footer />
+</Layout>
