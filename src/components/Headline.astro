@@ -71,20 +71,44 @@
 
   .headline--cards-image__left {
     left: 0;
+    animation: slide-left 0.7s ease-out;
   }
 
   .headline--cards-image__right {
     right: 0;
+    animation: slide-right 0.7s ease-out;
   }
 
   @keyframes fade-in-up {
     0% {
       transform: translateY(20px);
-      filter: blur(5px);
+      opacity: 0;
     }
     100% {
       transform: translateY(0);
       filter: blur(0);
+    }
+  }
+
+  @keyframes slide-left {
+    0% {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-right {
+    0% {
+      transform: translateX(20px);
+      filter: blur(5px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 </style>
