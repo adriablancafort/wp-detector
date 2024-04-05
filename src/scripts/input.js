@@ -159,7 +159,7 @@ const sanatizeUrl = (url) => {
 
 const apiRequest = (inputUrl, type) => {
   return fetch(
-    `https://wp-detector.000webhostapp.com/?url=${inputUrl}&type=${type}`
+    `https://api.wp-detector.com/?url=${inputUrl}&type=${type}`
   ).then((response) => response.json());
 };
 
