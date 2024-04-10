@@ -2,7 +2,7 @@
 layout: ../../layouts/Post.astro
 title: 'How to tell if a website is using Wordpress'
 date: 2024-04-10
-description: "A fully featured guide with all the ways to detect if a website is using worpress"
+description: "A fully featured guide with all the ways to detect if a website is using worpress."
 author: "Adrià Blancafort"
 image:
   url: "https://kinsta.com/es/wp-content/uploads/sites/8/2018/03/que-es-wordpress.png"

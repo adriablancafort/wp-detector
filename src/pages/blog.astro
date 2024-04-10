@@ -9,7 +9,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 
 <Layout>
   <Header />
-  <section class="container blog--container">
+  <section class="container">
     <h2 class="blog--title">Welcome to WordPress Detector <span>Blog</span></h2>
     <ul class="post--grid">
       {
@@ -31,10 +31,6 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 </Layout>
 
 <style is:global>
-  .blog--container {
-    margin-bottom: 3rem;
-  }
-
   .blog--title {
     font-size: 4rem;
     text-align: center;
@@ -64,5 +60,6 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
+    padding-bottom: 3rem;
   }
 </style>
