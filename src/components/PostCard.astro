@@ -1,36 +1,51 @@
 ---
-const { title, url, image, date, author, readingTime, description } =
+const { url, image, title, description, author, category, minutes } =
   Astro.props;
-
-const updatedDate = new Date(date).toLocaleDateString("en", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
 ---
 
-<article class="card border post--card">
+<article class="card border post-card">
   <a href={url}
-    ><img src={image.url} alt={image.alt} class="post--card--image" /></a
+    ><img src={image.url} alt={image.alt} class="post-card--image" /></a
   >
+  <div class="post-card--info-container">
+    <h2><a href={url} class="post-card--title">{title}</a></h2>
 
-  <h2 class="post--card--title"><a href={url}>{title}</a></h2>
+    <p class="post-card--description">{description}</p>
 
-  <p class="post--meta">
-    <a href="/">{author}</a> - {updatedDate} - {readingTime} min read
-  </p>
-
-  <p>{description}</p>
+    <p class="post-card--meta">
+      <a href="/">{author}</a> - <a href="/">{category}</a> - {minutes} min
+    </p>
+  </div>
 </article>
 
 <style>
-  .post--card {
+  .post-card {
     overflow: hidden;
     border-radius: 8px;
   }
 
-  .post--card--image {
+  .post-card--info-container {
+    padding: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .post-card--image {
     width: 100%;
     object-fit: contain;
+  }
+
+  .post-card--title {
+    font-size: 2rem;
+    font-family: "EB Garamond";
+    text-decoration: none;
+  }
+
+  .post-card--description {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  } 
+  
+  .post-card--meta a {
+    text-decoration: none;
   }
 </style>

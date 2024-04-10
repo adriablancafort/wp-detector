@@ -1,17 +1,17 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'Top 10 Most Used WordPress Themes'
+title: 'Top 10 Most popular WordPress Themes'
 date: 2024-04-10
-description: "A comprehensive guide to the top 10 most utilized WordPress themes in web development."
+description: "A comprehensive guide to the top 10 most popular WordPress themes."
 author: "Adrià Blancafort"
 image:
-  url: "https://i0.wp.com/themes.svn.wordpress.org/generatepress/3.4.0/screenshot.png"
+  url: "https://kinsta.com/es/wp-content/uploads/sites/8/2024/03/wp-installing-setup-data-for-a-wordpress-plugin.jpg"
   alt: "Detecting WordPress by testing the wp-admin"
 category: 'WordPress'
-readingTime: 7
+minutes: 7
 ---
 
-WordPress, as one of the leading content management systems, hosts a vast array of themes catering to diverse website needs. Unveiling the most utilized WordPress themes provides insight into prevailing design trends and preferences among web developers and users alike. Here, we present a curated list of the top 10 most employed WordPress themes:
+WordPress, as one of the leading content management systems, hosts a vast array of themes catering to diverse website needs. Unveiling the most popular WordPress themes provides insight into prevailing design trends and preferences among web developers and users alike. Here, we present a curated list of the top 10 most employed WordPress themes:
 
 ## 1. Divi
 
@@ -33,7 +33,7 @@ OceanWP combines speed, versatility, and SEO optimization, making it ideal for c
 
 GeneratePress offers a lightweight and developer-friendly framework, prioritizing performance and user experience. Its modular approach allows for easy customization and ensures optimal site speed.
 
-![Generatepress](https://i0.wp.com/themes.svn.wordpress.org/generatepress/3.4.0/screenshot.png)
+![Generatepress](https://kinsta.com/es/wp-content/uploads/sites/8/2024/03/wp-installing-setup-data-for-a-wordpress-plugin.jpg)
 
 ## 6. BeTheme
 
