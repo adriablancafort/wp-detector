@@ -7,25 +7,54 @@ import TableOfContentsHeading from "./TableOfContentsHeading.astro";
 function buildToc(headings) {
   const toc = [];
   const parentHeadings = new Map();
-    headings.forEach((h) => {
-        const heading = { ...h, subheadings: [] };
-        parentHeadings.set(heading.depth, heading);
-        if (heading.depth === 2) {
-            toc.push(heading);
-        } else {
-            const parentHeading = parentHeadings.get(heading.depth - 1);
-            if (parentHeading) {
-                parentHeading.subheadings.push(heading);
-            }
-        }
-    });
+  headings.forEach((h) => {
+    const heading = { ...h, subheadings: [] };
+    parentHeadings.set(heading.depth, heading);
+    if (heading.depth === 2) {
+      toc.push(heading);
+    } else {
+      const parentHeading = parentHeadings.get(heading.depth - 1);
+      if (parentHeading) {
+        parentHeading.subheadings.push(heading);
+      }
+    }
+  });
   return toc;
 }
 ---
 
-<nav class="toc">
+<section class="toc">
+  <h2>Table of Contents</h2>
   <ul>
     {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
   </ul>
-</nav>
+</section>
 
+<style is:global>
+  .toc {
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    border: 1px solid #cbcbcb;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .toc h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .toc a {
+    text-decoration: none;
+    line-height: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .toc li {
+    list-style-type: none;
+  }
+
+  .toc > ul > li > ul > li {
+    padding-left: 1.5rem;
+  }
+</style>

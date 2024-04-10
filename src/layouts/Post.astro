@@ -1,28 +1,135 @@
 ---
-const { frontmatter, headings } = Astro.props;
+const { frontmatter, headings, markdown } = Astro.props;
 import Layout from "./Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import ProgressBar from "../components/ProgressBar.astro";
+
+const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+function calculateReadingTime(text) {
+  const wordsPerMinute = 100;
+  const wordCount = text.split(/\s+/).length;
+  return Math.ceil(wordCount / wordsPerMinute);
+}
+
+const readingTime = 3;
 ---
 
 <Layout>
   <Header />
   <ProgressBar />
-  
-  <section class="container extension__container">
-    <h1>{frontmatter.title}</h1>
-    <p>{frontmatter.pubDate.slice(0, 10)}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Written by: {frontmatter.author}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
+  <section class="container container__post">
+    <p class="post--category"><a href="/">{frontmatter.category}</a></p>
+
+    <h1 class="post--title">{frontmatter.title}</h1>
+
+    <p class="post--meta">
+      <a href="/">{frontmatter.author}</a> - {updatedDate} - {readingTime} min read
+    </p>
+
+    <img
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      class="post--image"
+    />
 
     <TableOfContents headings={headings} />
 
-    <article>
+    <article class="post--content">
       <slot />
     </article>
   </section>
   <Footer />
 </Layout>
+
+<style is:global>
+  .container__post {
+    max-width: 750px;
+  }
+
+  .post--category {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .post--category a {
+    padding: 2px 1rem;
+    color: #fff;
+    background-color: #3858e9;
+    border-radius: 2px;
+    text-decoration: none;
+  }
+
+  .post--category a:hover {
+    background-color: #213fd4;
+  }
+
+  .post--title {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .post--meta {
+    padding: 2rem 0;
+  }
+
+  .post--meta a {
+    text-decoration: none;
+  }
+
+  .post--image {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .post--content p {
+    line-height: 2.2rem;
+    font-size: 1.2em;
+    padding-bottom: 1rem;
+  }
+
+  .post--content h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "EB Garamond";
+    font-weight: 400;
+  }
+
+  .post--content h1 {
+    font-size: 4rem;
+    padding: 2rem 0;
+  }
+
+  .post--content h2 {
+    font-size: 3rem;
+    padding: 2rem 0;
+  }
+
+  .post--content h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+  }
+
+  .post--content img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+</style>
