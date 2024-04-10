@@ -2,7 +2,7 @@
 layout: ../../layouts/Post.astro
 title: 'Top 10 Most popular WordPress Themes'
 date: 2024-04-10
-description: "A comprehensive guide to the top 10 most popular WordPress themes."
+description: "A comprehensive guide to the top 10 most popular WordPress Themes."
 author: "Adrià Blancafort"
 image:
   url: "https://kinsta.com/es/wp-content/uploads/sites/8/2024/03/wp-installing-setup-data-for-a-wordpress-plugin.jpg"
