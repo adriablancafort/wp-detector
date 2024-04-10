@@ -7,7 +7,7 @@ author: "Adrià Blancafort"
 image:
   url: "https://kinsta.com/es/wp-content/uploads/sites/8/2024/03/wp-installing-setup-data-for-a-wordpress-plugin.jpg"
   alt: "Detecting WordPress by testing the wp-admin"
-category: 'WordPress'
+category: 'Themes'
 minutes: 7
 ---
 
