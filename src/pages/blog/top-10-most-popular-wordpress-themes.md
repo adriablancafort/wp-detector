@@ -8,7 +8,7 @@ image:
   url: "https://kinsta.com/es/wp-content/uploads/sites/8/2024/03/wp-installing-setup-data-for-a-wordpress-plugin.jpg"
   alt: "Detecting WordPress by testing the wp-admin"
 category: 'Themes'
-minutes: 7
+minutes: 2
 ---
 
 WordPress, as one of the leading content management systems, hosts a vast array of themes catering to diverse website needs. Unveiling the most popular WordPress themes provides insight into prevailing design trends and preferences among web developers and users alike. Here, we present a curated list of the top 10 most employed WordPress themes:

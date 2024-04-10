@@ -2,13 +2,13 @@
 layout: ../../layouts/Post.astro
 title: 'How to tell if a website is using Wordpress'
 date: 2024-04-10
-description: "A fully featured guide with all the ways to detect if a website is using worpress."
+description: "A fully featured guide with all the ways to detect if a website is using WordPress."
 author: "Adrià Blancafort"
 image:
   url: "https://kinsta.com/es/wp-content/uploads/sites/8/2018/03/que-es-wordpress.png"
   alt: "Detecting wordpress by testing the wp-admin"
 category: 'WordPress'
-minutes: 7
+minutes: 4
 ---
 
 When you’re surfing the web and visiting different websites, you probably often get the ‘oh wow’ feeling that some websites manage to give you with their design. One of the first things it’ll make you wonder is how it was made.

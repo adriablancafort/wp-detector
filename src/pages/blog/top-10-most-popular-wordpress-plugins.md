@@ -8,7 +8,7 @@ image:
   url: "https://kinsta.com/es/wp-content/uploads/sites/8/2024/02/wp-bulk-update-plugins-wordpress.jpg"
   alt: "Detecting WordPress by testing the wp-admin"
 category: 'Plugins'
-minutes: 7
+minutes: 2
 ---
 
 ## Unveiling the Top 10 Most Popular WordPress Plugins
