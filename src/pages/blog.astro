@@ -4,20 +4,25 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PostCard from "../components/PostCard.astro";
 
-
 const allPosts = await Astro.glob("../pages/blog/*.md");
 ---
 
 <Layout>
   <Header />
-  <section class="container">
-    <ul>
+  <section class="container blog--container">
+    <h2 class="blog--title">Welcome to WordPress Detector <span>Blog</span></h2>
+    <ul class="post--grid">
       {
         allPosts.map((post) => (
           <PostCard
             url={post.url}
             title={post.frontmatter.title}
             image={post.frontmatter.image}
+            category={post.frontmatter.category}
+            date={post.frontmatter.date}
+            description={post.frontmatter.description}
+            author={post.frontmatter.author}
+            readdingTime={post.frontmatter.readingTime}
           />
         ))
       }
@@ -25,3 +30,40 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
   </section>
   <Footer />
 </Layout>
+
+<style is:global>
+  .blog--container {
+    padding-bottom: 4rem;
+  }
+
+  .blog--title {
+    font-size: 4rem;
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .blog--title span {
+    font-family: "EB Garamond";
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0.5rem;
+      left: -0.4rem;
+      right: -0.8rem;
+      height: 1rem;
+
+      z-index: -1;
+      background-image: url("/underline.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .post--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

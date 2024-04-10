@@ -1,8 +1,36 @@
 ---
-const { title, url, image } = Astro.props;
+const { title, url, image, date, author, readingTime, description } =
+  Astro.props;
+
+const updatedDate = new Date(date).toLocaleDateString("en", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
-<li>
-    <img src={image.url} alt={image.alt}>
-    <a href={url}>{title}</a>
-</li>
+<article class="card border post--card">
+  <a href={url}
+    ><img src={image.url} alt={image.alt} class="post--card--image" /></a
+  >
+
+  <h2 class="post--card--title"><a href={url}>{title}</a></h2>
+
+  <p class="post--meta">
+    <a href="/">{author}</a> - {updatedDate} - {readingTime} min read
+  </p>
+
+  <p>{description}</p>
+</article>
+
+<style>
+  .post--card {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .post--card--image {
+    width: 100%;
+    object-fit: contain;
+  }
+</style>

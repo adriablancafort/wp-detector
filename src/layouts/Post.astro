@@ -1,5 +1,5 @@
 ---
-const { frontmatter, headings, markdown } = Astro.props;
+const { frontmatter, headings } = Astro.props;
 import Layout from "./Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -11,14 +11,6 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
   month: "long",
   day: "numeric",
 });
-
-function calculateReadingTime(text) {
-  const wordsPerMinute = 100;
-  const wordCount = text.split(/\s+/).length;
-  return Math.ceil(wordCount / wordsPerMinute);
-}
-
-const readingTime = 3;
 ---
 
 <Layout>
@@ -31,7 +23,7 @@ const readingTime = 3;
     <h1 class="post--title">{frontmatter.title}</h1>
 
     <p class="post--meta">
-      <a href="/">{frontmatter.author}</a> - {updatedDate} - {readingTime} min read
+      <a href="/">{frontmatter.author}</a> - {updatedDate} - {frontmatter.readingTime} min read
     </p>
 
     <img
@@ -73,7 +65,6 @@ const readingTime = 3;
 
   .post--title {
     font-size: 4rem;
-    line-height: 4rem;
   }
 
   .post--meta {
