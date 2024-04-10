@@ -1,5 +1,5 @@
 <footer>
-  <div class="container container--footer">
+  <div class="container">
     <a href="/">
       <img
         src="/wordpress-detector-logo.svg"
@@ -8,10 +8,9 @@
         height="50"
       />
     </a>
-    <span
-      >Developed by <a href="https://adriablancafort.com" target="_blank"
-        >Adrià Blancafort</a
-      ></span
+    <span class="copyright--message"
+      >Copyright &copy; WP Detector. All Rights Reserved. WordPress® is a registered
+      brand of the WordPress Foudation</span
     >
   </div>
 </footer>
@@ -22,16 +21,11 @@
     background-color: #23282d;
   }
 
-  footer a {
-    color: #fff;
-  }
-
-  footer a:hover {
-    color: #cdcccc
-  }
-  .container--footer {
+  .copyright--message {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-top: 1px solid #555555;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 14px;
   }
 </style>
