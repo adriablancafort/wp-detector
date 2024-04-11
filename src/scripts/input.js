@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   const inputForm = document.getElementById("inputForm");
   const wpContainer = document.getElementById("wpContainer");
   const themesContainer = document.getElementById("themesContainer");
