@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   const inputForm = document.getElementById("inputForm");
-  const outputContainer = document.getElementById("outputContainer");
+  const wpContainer = document.getElementById("wpContainer");
+  const themesContainer = document.getElementById("themesContainer");
+  const pluginsContainer = document.getElementById("pluginsContainer");
 
   let oldUrl = "";
 
@@ -14,21 +16,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const websiteName = formatWebsiteName(inputUrl);
 
       // Wordpress Detected container
-      outputContainer.innerHTML = "";
-      const wpContainer = document.createElement("div");
-      outputContainer.appendChild(wpContainer);
       wpContainer.innerHTML = analyzingResultsTitle(websiteName);
       wpContainer.innerHTML += detectWpSkeleton;
 
       // Themes Detected container
-      const themesContainer = document.createElement("div");
-      outputContainer.appendChild(themesContainer);
       themesContainer.innerHTML = analyzingThemesTitle(websiteName);
       themesContainer.innerHTML += detectThemesSkeleton;
 
       // Plugins Detected container
-      const pluginsContainer = document.createElement("div");
-      outputContainer.appendChild(pluginsContainer);
       pluginsContainer.innerHTML = analyzingPluginsTitle(websiteName);
       pluginsContainer.innerHTML += detectPluginsSkeleton;
       pluginsContainer.innerHTML += detectPluginsSkeleton;
@@ -115,12 +110,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
           })
           .catch(() => {
-            outputContainer.innerHTML = showingResultsTitle(websiteName);
-            outputContainer.innerHTML += htmlRetrieveError(websiteName);
+            wpContainer.innerHTML = showingResultsTitle(websiteName);
+            wpContainer.innerHTML += htmlRetrieveError(websiteName);
+            themesContainer.innerHTML = "";
+            pluginsContainer.innerHTML = "";
           });
       } else {
         oldUrl = "";
-        outputContainer.innerHTML = invalidUrl;
+        wpContainer.innerHTML = invalidUrl;
+        themesContainer.innerHTML = "";
+        pluginsContainer.innerHTML = "";
       }
     }
   });
