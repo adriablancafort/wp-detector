@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wp-detector.com/sitemap-index.xml
