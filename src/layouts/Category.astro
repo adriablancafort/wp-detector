@@ -23,15 +23,7 @@ const description = `All Blog Posts about ${frontmatter.name} Category on the Wo
     <ul class="post--grid">
       {
         categoryPosts.map((post) => (
-          <PostCard
-            url={post.url}
-            title={post.frontmatter.title}
-            description={post.frontmatter.description}
-            image={post.frontmatter.image}
-            author={post.frontmatter.author}
-            category={post.frontmatter.category}
-            minutes={post.frontmatter.minutes}
-          />
+          <PostCard post={post} />
         ))
       }
     </ul>

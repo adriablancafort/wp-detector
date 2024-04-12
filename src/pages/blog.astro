@@ -17,15 +17,7 @@ const description = "Comparisons, analysis, and reviews of WordPress themes, plu
     <ul class="post--grid">
       {
         allPosts.map((post) => (
-          <PostCard
-            url={post.url}
-            title={post.frontmatter.title}
-            description={post.frontmatter.description}
-            image={post.frontmatter.image}
-            author={post.frontmatter.author}
-            category={post.frontmatter.category}
-            minutes={post.frontmatter.minutes}
-          />
+          <PostCard post={post} />
         ))
       }
     </ul>

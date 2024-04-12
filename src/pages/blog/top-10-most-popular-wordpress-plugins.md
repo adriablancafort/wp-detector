@@ -107,7 +107,7 @@ The plugin also offers tools for optimizing meta tags, titles, and descriptions,
 
 The plugin also offers features such as CDN support and cache preloading, further enhancing its performance-boosting capabilities. With WP Super Cache, you can ensure that your website loads quickly and smoothly for your visitors, providing them with an optimal browsing experience.
 
-# Conclusion
+## Conclusion
 
 Adding more features and functionality to WordPress sites is easy, thanks to the abundance of plugins. All you need to do is pick one that suits your needs.
 

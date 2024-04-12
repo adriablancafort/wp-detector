@@ -1,29 +1,26 @@
 ---
-const { frontmatter } = Astro.props;
-import Layout from "./Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import PostCard from "../components/PostCard.astro";
+import ThemeCard from "../components/ThemeCard.astro";
 
-const allPosts = await Astro.glob("../pages/blog/*.md");
-const categoryPosts = allPosts.filter(
-  (post) => post.frontmatter.author.slug === frontmatter.slug
-);
+const topThemes = fetch(
+  `https://wp-detector.000webhostapp.com?url=themes&type=top-themes`
+).then((response) => response.json());
 
-const title = `${frontmatter.name} - All Posts on the WordPress Detector Blog`;
-const description = `All Blog Posts written by ${frontmatter.name}, Author on the WordPress Detector Blog`;
+const title = "Top Most Detected Themes by WordPress Detector";
+const description =
+  "An updated list with the most comonly detected themes by WordPress Detector analyzed websites";
 ---
 
 <Layout title={title} description={description}>
   <Header />
   <section class="container">
-    <h2 class="grid--title">
-      Blog Posts by <span>{frontmatter.name}</span>
-    </h2>
+    <h2 class="grid--title">Welcome to WordPress Detector <span>Blog</span></h2>
     <ul class="post--grid">
       {
-        categoryPosts.map((post) => (
-          <PostCard post={post} />
+        topThemes.map((theme) => (
+            <ThemeCard theme={theme} />
         ))
       }
     </ul>

@@ -1,0 +1,35 @@
+---
+const { theme } = Astro.props;
+---
+
+<div class="card card--hover border">
+  <img src="{theme.banner}" alt="Theme Banner" class="card--banner" />
+  <div class="card--info-container">
+    <h4 class="card--title">{theme.title}</h4>
+    <p>Author: <strong>{theme.author}</strong></p>
+    <p>Version: <span class="badge">{theme.version}</span></p>
+    <p>
+      Website: <a href="{theme.website}" target="_blank"
+        >{theme.sanatizedWebsite}</a>
+    </p>
+    <p>WordPress Version: <strong>{theme.reqWpVersion} or higher</strong></p>
+    <p>Tested up To: <strong>{theme.testedWpVersion}</strong></p>
+    <p>PHP Version: <strong>{theme.reqPhpVersion} or higher</strong></p>
+    <p class="card--description">
+      <strong>Description:</strong> {theme.description}
+    </p>
+  </div>
+  {
+    theme.link
+      ? `
+  <div class="cart--read-more--container">
+    <span class="cart--read-more">
+      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" >
+        <path fill="currentColor" d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" ></path>
+      </svg>
+      Read more
+    </span>
+  </div>`
+      : ""
+  }
+</div>

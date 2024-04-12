@@ -1,25 +1,30 @@
 ---
-const { url, image, title, description, author, category, minutes } =
-  Astro.props;
+const { post } = Astro.props;
 ---
 
 <article class="card border post-card">
-  <a href={url}
+  <a href={post.url}
     ><img
-      src={image.source}
-      alt={image.alt}
+      src={post.frontmatter.image.source}
+      alt={post.frontmatter.image.alt}
       class="post-card--image"
     /></a
   >
   <div class="post-card--info-container">
-    <h2><a href={url} class="post-card--title">{title}</a></h2>
+    <h2>
+      <a href={post.url} class="post-card--title"
+        >{post.frontmatter.title}</a
+      >
+    </h2>
 
-    <p class="post-card--description">{description}</p>
+    <p class="post-card--description">{post.frontmatter.description}</p>
 
     <p class="post-card--meta">
-      <a href={`/blog/author/${author.slug}`}>{author.name}</a> - <a
-        href={`/blog/category/${category.slug}`}>{category.name}</a
-      > - {minutes} min
+      <a href={`/blog/author/${post.frontmatter.author.slug}`}
+        >{post.frontmatter.author.name}</a
+      > - <a href={`/blog/category/${post.frontmatter.category.slug}`}
+        >{post.frontmatter.category.name}</a
+      > - {post.frontmatter.minutes} min
     </p>
   </div>
 </article>
@@ -28,12 +33,12 @@ const { url, image, title, description, author, category, minutes } =
   .post-card {
     overflow: hidden;
     border-radius: 8px;
+    position: relative;
   }
 
   .post-card--info-container {
     padding: 1.5rem;
     padding-top: 1rem;
-    position: relative;
   }
 
   .post-card--image {
@@ -49,7 +54,13 @@ const { url, image, title, description, author, category, minutes } =
 
   .post-card--description {
     padding-top: 1.5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .post-card--meta {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
   }
 
   .post-card--meta a {
