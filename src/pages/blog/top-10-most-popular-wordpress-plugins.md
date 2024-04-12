@@ -10,9 +10,9 @@ author:
   slug: "adria-blancafort"
 date: 2024-04-10
 category:
-  name: "Themes"
-  slug: "themes"
-minutes: 2
+  name: "Plugins"
+  slug: "plugins"
+minutes: 3
 ---
 
 [WordPress](/category/wordpress) is a highly flexible content management system for website creation. One of the main reasons for this is the wide variety of plugins available for adding more features to your site.

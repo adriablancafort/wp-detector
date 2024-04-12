@@ -1,5 +1,6 @@
 ---
-const { url, image, title, description, author, category, minutes } = Astro.props;
+const { url, image, title, description, author, category, minutes } =
+  Astro.props;
 ---
 
 <article class="card border post-card">
@@ -28,6 +29,7 @@ const { url, image, title, description, author, category, minutes } = Astro.prop
   .post-card--info-container {
     padding: 1.5rem;
     padding-top: 1rem;
+    position: relative;
   }
 
   .post-card--image {
@@ -43,7 +45,7 @@ const { url, image, title, description, author, category, minutes } = Astro.prop
 
   .post-card--description {
     padding-top: 1.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
   .post-card--meta a {
