@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-title: '7 Ways to Check if a Website is Using Wordpress in 2024'
+title: '5 Ways to Check if a Website is Using Wordpress in 2024'
 description: "A fully featured guide with all the ways to detect if a website is using WordPress."
 image:
   source: "https://kinsta.com/es/wp-content/uploads/sites/8/2018/03/que-es-wordpress.png"
@@ -50,17 +50,17 @@ Once you see a screen like this appear after adding ‘/wp-admin’ to the URL o
 
 The next possibility you have to figure out if a website is made with WordPress is by using some online tools that are there out there. The tools that we’ll mention are free to use and will give you an immediate answer.
 
-### WordPress Detector
-
-![Powered by WordPress](/WordPress-Detector.webp)
-
-Another tool that helps you in your quest is the [WordPress Detector](/) website. This one is quite different from the BuiltWith website. The Builtwith tool tries to provide you with as many answers as possible whereas the ‘Is It WordPress?’ online tool only gives you a yes or no answer. That’s great if you’re in a hurry or if you don’t know a lot about the other information that is being provided.
-
 ### BuiltWith
 
 ![Built with](https://www.elegantthemes.com/blog/wp-content/uploads/2017/08/mwp4.png)
 
 The first online tool that will help you determine if a website is made with WordPress is [BuiltWith](https://builtwith.com/). You could easily say that BuiltWith is the advanced possibility you have to discover what a website is about. If you’re deciding to go with this option, the only thing you’ll have to do is provide the online tool with the website URL and press ‘lookup’. Once you’ve done that, you’ll get a list of all kinds of things that tell something more about the website. You can find what you are looking for by scrolling through the list and searching for the Content Management System. Not only will you figure out if the website is running on WordPress, but you’ll also have a view on which version of WordPress the website has installed.
+
+### WordPress Detector
+
+![Powered by WordPress](/WordPress-Detector.webp)
+
+Another tool that helps you in your quest is the [WordPress Detector](/) website. This one is quite different from the BuiltWith website. The Builtwith tool tries to provide you with as many answers as possible whereas the ‘Is It WordPress?’ online tool only gives you a yes or no answer. That’s great if you’re in a hurry or if you don’t know a lot about the other information that is being provided.
 
 ## 5. Browser Extensions
 
