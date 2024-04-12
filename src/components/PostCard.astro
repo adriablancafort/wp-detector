@@ -5,7 +5,12 @@ const { url, image, title, description, author, category, minutes } =
 
 <article class="card border post-card">
   <a href={url}
-    ><img src={image.source} alt={image.alt} class="post-card--image" /></a
+    ><img
+      src={image.source}
+      alt={image.alt}
+      class="post-card--image"
+      transition:name="post-image"
+    /></a
   >
   <div class="post-card--info-container">
     <h2><a href={url} class="post-card--title">{title}</a></h2>

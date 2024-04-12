@@ -29,13 +29,14 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
     <p class="post--meta">
       <a href={`/author/${frontmatter.author.slug}`}
         >{frontmatter.author.name}</a
-      > - {updatedDate} - {frontmatter.minutes} min read
+      > - <date>{updatedDate}</date> - {frontmatter.minutes} min read
     </p>
 
     <img
       src={frontmatter.image.source}
       alt={frontmatter.image.alt}
       class="post--image"
+      transition:name="post-image"
     />
 
     <TableOfContents headings={headings} />
