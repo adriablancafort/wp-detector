@@ -79,6 +79,8 @@ Flatsome offers a wide range of customization options, including layout settings
 
 ## 10. Salient
 
+![Salient](https://camo.envatousercontent.com/8987d37a8d7329a5910847aa20ec349473e591bb/68747470733a2f2f7468656d656e65637461722e636f6d2f696d672f323032332d746f75722f73747564696f2d74656d706c617465732d76322e6a7067)
+
 Salient impresses with its modern design and seamless integration with popular plugins like WPBakery Page Builder and Slider Revolution. Its plethora of customization options empowers users to craft unique and visually striking websites. Salient's responsive design ensures that websites look great on any device, while its regular updates and dedicated support ensure that users stay up-to-date with the latest features and fixes.
 
 Salient offers a wide range of customization options, including layout settings, color schemes, and typography controls, allowing users to create highly customized websites effortlessly. Its seamless integration with popular plugins extends its functionality, allowing users to add advanced features and functionality to their websites with ease. Whether you're building a portfolio, blog, or corporate website, Salient provides the versatility and functionality needed to succeed online.
