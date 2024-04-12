@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ThemeCard from "../components/ThemeCard.astro";
+import PluginCard from "../components/PluginCard.astro";
 
 const response = await fetch(
-  "https://wp-detector.000webhostapp.com/?url=https://wp-detector.com&type=top-themes"
+  "https://wp-detector.000webhostapp.com/?url=https://wp-detector.com&type=top-plugins"
 );
 const data = await response.json();
 const topThemes = data["themes"];
@@ -18,11 +18,9 @@ const description =
 <Layout title={title} description={description}>
   <Header />
   <section class="container">
-    <h2 class="grid--title">Top Most Detected <span>Plugins</span></h2>
+    <h2 class="grid--title">Top Most Detected <span>Themes</span></h2>
     <ul class="post--grid">
-      {topThemes.map((theme) => (
-        <ThemeCard theme={theme} />
-      ))}
+      {topThemes.map((plugin) => <PluginCard plugin={plugin} />)}
     </ul>
   </section>
   <Footer />

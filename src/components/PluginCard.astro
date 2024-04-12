@@ -1,0 +1,46 @@
+---
+const { plugin } = Astro.props;
+---
+
+<div class="card card--hover border">
+  <img src={plugin.banner} alt="Plugin Banner" class="card--banner" />
+  <div class="card--info-container">
+    <div class="card--title-container__plugin">
+      <img
+        src={
+        plugin.icon
+      } 
+        alt="Plugin Icon"
+        class="card--icon"
+        width="60px"
+        height="60px"
+      />
+      <h4 class="card--title">{plugin.title}</h4>
+    </div>
+    <p>Author: <strong>{plugin.author}</strong></p>
+    <p>Version: <span class="badge">{plugin.version}</span></p>
+    <p>
+      Website: <a href="{plugin.website}" target="_blank"
+        >{plugin.sanatizedWebsite}</a>
+    </p>
+    <p>WordPress Version: <strong>{plugin.reqWpVersion} or higher</strong></p>
+    <p>Tested up To: <strong>{plugin.testedWpVersion}</strong></p>
+    <p>PHP Version: <strong>{plugin.reqPhpVersion} or higher</strong></p>
+    <p class="card--description">
+      <strong>Description:</strong> {plugin.description}
+    </p>
+  </div>
+  {
+    plugin.link
+      ? 
+  <div class="cart--read-more--container">
+    <span class="cart--read-more">
+      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" >
+        <path fill="currentColor" d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" ></path>
+      </svg>
+      Read more
+    </span>
+  </div>
+      : ""
+  }
+</div>
