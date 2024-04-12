@@ -23,19 +23,25 @@ Having the right theme can make a huge difference in the growth, management, and
 
 In this article, we have hand-picked the best WordPress themes of 2024 to help you find the right one for your website.
 
-## 1. Divi
+## 1. Astra
 
-Divi, developed by Elegant Themes, is a highly versatile and popular WordPress theme. Its standout feature is its intuitive drag-and-drop builder, which allows users to create stunning websites without any coding knowledge. Additionally, Divi offers a vast array of customization options, including pre-designed layouts and modules, enabling users to tailor their websites to their specific needs.
-
-Divi's popularity stems from its ease of use and flexibility. Whether you're a beginner or an experienced developer, Divi provides the tools necessary to build professional websites quickly and efficiently. Moreover, its regular updates and dedicated support ensure that users stay up-to-date with the latest features and fixes.
-
-## 2. Astra
+![Astra](https://i0.wp.com/themes.svn.wordpress.org/astra/4.6.11/screenshot.jpg)
 
 Astra is renowned for its lightning-fast performance and compatibility with popular page builders like Elementor and Beaver Builder. Its lightweight design ensures that websites built with Astra load quickly, enhancing user experience and SEO rankings. Astra's simplicity and flexibility make it a preferred choice for various industries, from bloggers to e-commerce businesses.
 
 Astra offers a wide range of starter templates and customization options, allowing users to create unique and visually appealing websites with ease. Its seamless integration with popular plugins further extends its functionality, making it a versatile solution for any WordPress project.
 
+## 2. Divi
+
+![Divi](https://www.elegantthemes.com/blog/wp-content/uploads/2019/10/tb-demo-6-ft-img.jpg)
+
+Divi, developed by Elegant Themes, is a highly versatile and popular WordPress theme. Its standout feature is its intuitive drag-and-drop builder, which allows users to create stunning websites without any coding knowledge. Additionally, Divi offers a vast array of customization options, including pre-designed layouts and modules, enabling users to tailor their websites to their specific needs.
+
+Divi's popularity stems from its ease of use and flexibility. Whether you're a beginner or an experienced developer, Divi provides the tools necessary to build professional websites quickly and efficiently. Moreover, its regular updates and dedicated support ensure that users stay up-to-date with the latest features and fixes.
+
 ## 3. Avada
+
+![Avada](https://s3.envato.com/files/492008826/screenshots/00-Preview.__large_preview.jpg)
 
 Avada is a feature-rich WordPress theme known for its multipurpose capabilities. With an extensive library of pre-built website demos and a powerful fusion builder, Avada enables users to create stunning and functional websites without any coding knowledge. Its robust customization options, coupled with regular updates and dedicated support, ensure that users have everything they need to bring their vision to life.
 
@@ -43,11 +49,15 @@ Avada's versatility makes it suitable for a wide range of projects, from corpora
 
 ## 4. OceanWP
 
+![OceanWP](https://i0.wp.com/themes.svn.wordpress.org/oceanwp/3.5.5/screenshot.png)
+
 OceanWP is a highly customizable WordPress theme known for its speed, versatility, and SEO optimization. Its lightweight design ensures fast loading times, contributing to an enhanced user experience and improved search engine rankings. OceanWP's seamless integration with popular page builders and plugins further extends its functionality, making it a preferred choice for developers and website creators alike.
 
 OceanWP offers a plethora of customization options, including layout settings, typography controls, and color schemes, allowing users to create unique and visually appealing websites. Its responsive design ensures that websites built with OceanWP look great on any device, further enhancing its appeal. Whether you're building a personal blog or an e-commerce store, OceanWP provides the tools necessary to succeed online.
 
 ## 5. GeneratePress
+
+![GeneratePress](https://generatepress.com/wp-content/uploads/2021/04/GP-Home.jpg)
 
 GeneratePress is a lightweight and developer-friendly WordPress theme designed for optimal performance and user experience. Its modular approach allows for easy customization, ensuring that users only enable the features they need, thus minimizing bloat and improving site speed. GeneratePress's commitment to clean code and accessibility makes it a favorite among developers and website creators looking to build fast, accessible, and SEO-friendly websites.
 
@@ -55,11 +65,15 @@ GeneratePress offers a range of customization options, including layout settings
 
 ## 6. BeTheme
 
+![Be Theme](https://themeforest.img.customer.envatousercontent.com/files/492750813/01_betheme.__large_preview.png?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=17392fee428ade1b19fb56881a695867)
+
 BeTheme stands out for its vast selection of pre-designed templates catering to various industries and niches. Its advanced options panel and built-in tools empower users to create professional websites with ease. Whether you're a freelancer, agency, or business owner, BeTheme offers the flexibility and functionality needed to bring your vision to life.
 
 BeTheme's extensive library of pre-designed templates provides a solid foundation for users to build upon, saving time and effort in the website development process. Its advanced options panel allows for easy customization, giving users full control over their website's design and functionality. Additionally, BeTheme's built-in tools, such as the Muffin Builder and Slider Revolution, further enhance its versatility, making it a top choice for anyone looking to create a standout website.
 
 ## 7. Enfold
+
+![Endfold](https://themeforest.img.customer.envatousercontent.com/files/479541400/images/1_preview.__large_preview.png?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=e1c23bc0253039b732a2a8da7a786d38)
 
 Enfold excels in simplicity and user-friendliness, making it suitable for both beginners and experienced developers. Its responsive design ensures that websites look great on any device, while its extensive documentation provides valuable guidance throughout the website development process. Enfold's wide range of customization options, including layout settings, color schemes, and typography controls, allows users to create unique and visually appealing websites with ease.
 
@@ -67,11 +81,15 @@ Enfold's intuitive interface makes it easy to navigate, while its drag-and-drop 
 
 ## 8. The7
 
+![The 7](https://themeforest.img.customer.envatousercontent.com/files/455896218/preview_x2.__large_preview.png?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=e28798543fb31c784fb97fcd6d25ad19)
+
 The7 is a multipurpose WordPress theme renowned for its flexibility and compatibility with popular plugins like WooCommerce and WPBakery Page Builder. Its comprehensive design options enable users to create highly customized websites effortlessly. Whether you're building an online store, portfolio, or corporate website, The7 offers the versatility and functionality needed to bring your vision to life.
 
 The7's seamless integration with popular plugins extends its functionality, allowing users to add advanced features and functionality to their websites with ease. Its comprehensive design options, including layout settings, color schemes, and typography controls, provide endless possibilities for customization. Additionally, The7's regular updates and dedicated support ensure that users stay up-to-date with the latest features and fixes, making it a top choice for anyone looking to build a professional website.
 
 ## 9. Flatsome
+
+![Flatsome](https://themeforest.img.customer.envatousercontent.com/files/479395230/Cover.__large_preview.jpg?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=fc2d1e9700135695546cbb1c7bc77b75)
 
 Flatsome is a WooCommerce-focused theme celebrated for its elegant design and robust e-commerce features. Its intuitive interface and extensive styling options make it a preferred choice for online stores. Flatsome's responsive design ensures that e-commerce websites look great on any device, while its seamless integration with WooCommerce provides a seamless shopping experience for customers.
 
@@ -79,7 +97,7 @@ Flatsome offers a wide range of customization options, including layout settings
 
 ## 10. Salient
 
-![Salient](https://camo.envatousercontent.com/8987d37a8d7329a5910847aa20ec349473e591bb/68747470733a2f2f7468656d656e65637461722e636f6d2f696d672f323032332d746f75722f73747564696f2d74656d706c617465732d76322e6a7067)
+![Salient](https://themenectar.com/salient/wp-content/uploads/sites/4/2023/07/mag-jpg.webp)
 
 Salient impresses with its modern design and seamless integration with popular plugins like WPBakery Page Builder and Slider Revolution. Its plethora of customization options empowers users to craft unique and visually striking websites. Salient's responsive design ensures that websites look great on any device, while its regular updates and dedicated support ensure that users stay up-to-date with the latest features and fixes.
 
