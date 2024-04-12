@@ -18,16 +18,22 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
   <ProgressBar />
 
   <section class="container container__post">
-    <p class="post--category"><a href="/">{frontmatter.category}</a></p>
+    <p class="post--category">
+      <a href={`/category/${frontmatter.category.slug}`}
+        >{frontmatter.category.name}</a
+      >
+    </p>
 
     <h1 class="post--title">{frontmatter.title}</h1>
 
     <p class="post--meta">
-      <a href="/">{frontmatter.author}</a> - {updatedDate} - {frontmatter.minutes} min read
+      <a href={`/author/${frontmatter.author.slug}`}
+        >{frontmatter.author.name}</a
+      > - {updatedDate} - {frontmatter.minutes} min read
     </p>
 
     <img
-      src={frontmatter.image.url}
+      src={frontmatter.image.source}
       alt={frontmatter.image.alt}
       class="post--image"
     />
@@ -115,6 +121,13 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
   h6 {
     font-size: 2.5rem;
     padding: 1rem 0;
+  }
+
+  .post--content li {
+    font-size: 2rem;
+    padding: 1rem 0;
+    font-family: "Inter";
+    list-style: none;
   }
 
   .post--content img {

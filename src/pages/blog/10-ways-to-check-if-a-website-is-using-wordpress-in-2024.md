@@ -1,13 +1,17 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'How to tell if a website is using Wordpress'
-date: 2024-04-10
+title: '7 Ways to Check if a Website is Using Wordpress in 2024'
 description: "A fully featured guide with all the ways to detect if a website is using WordPress."
-author: "Adrià Blancafort"
 image:
-  url: "https://kinsta.com/es/wp-content/uploads/sites/8/2018/03/que-es-wordpress.png"
+  source: "https://kinsta.com/es/wp-content/uploads/sites/8/2018/03/que-es-wordpress.png"
   alt: "Detecting wordpress by testing the wp-admin"
-category: 'WordPress'
+author:
+  name: "Adrià Blancafort"
+  slug: "adria-blancafort"
+date: 2024-04-11
+category:
+  name: "WordPress"
+  slug: "wordpress"
 minutes: 4
 ---
 

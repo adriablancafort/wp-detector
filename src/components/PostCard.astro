@@ -1,11 +1,10 @@
 ---
-const { url, image, title, description, author, category, minutes } =
-  Astro.props;
+const { url, image, title, description, author, category, minutes } = Astro.props;
 ---
 
 <article class="card border post-card">
   <a href={url}
-    ><img src={image.url} alt={image.alt} class="post-card--image" /></a
+    ><img src={image.source} alt={image.alt} class="post-card--image" /></a
   >
   <div class="post-card--info-container">
     <h2><a href={url} class="post-card--title">{title}</a></h2>
@@ -13,7 +12,9 @@ const { url, image, title, description, author, category, minutes } =
     <p class="post-card--description">{description}</p>
 
     <p class="post-card--meta">
-      <a href="/">{author}</a> - <a href="/">{category}</a> - {minutes} min
+      <a href={`/author/${author.slug}`}>{author.name}</a> - <a
+        href={`/category/${category.slug}`}>{category.name}</a
+      > - {minutes} min
     </p>
   </div>
 </article>
@@ -43,8 +44,8 @@ const { url, image, title, description, author, category, minutes } =
   .post-card--description {
     padding-top: 1.5rem;
     padding-bottom: 3rem;
-  } 
-  
+  }
+
   .post-card--meta a {
     text-decoration: none;
   }
