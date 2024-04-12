@@ -19,7 +19,7 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
 
   <section class="container container__post">
     <p class="post--category">
-      <a href={`/category/${frontmatter.category.slug}`}
+      <a href={`/blog/category/${frontmatter.category.slug}`}
         >{frontmatter.category.name}</a
       >
     </p>
@@ -27,7 +27,7 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
     <h1 class="post--title">{frontmatter.title}</h1>
 
     <p class="post--meta">
-      <a href={`/author/${frontmatter.author.slug}`}
+      <a href={`/blog/author/${frontmatter.author.slug}`}
         >{frontmatter.author.name}</a
       > - <date>{updatedDate}</date> - {frontmatter.minutes} min read
     </p>

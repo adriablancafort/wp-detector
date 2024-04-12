@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-title: '5 Ways to Check if a Website is Using Wordpress in 2024'
+title: "5 Ways to Check if a Website is Using Wordpress in 2024"
 description: "A fully featured guide with all the ways to detect if a website is using WordPress."
 image:
   source: "https://kinsta.com/es/wp-content/uploads/sites/8/2018/03/que-es-wordpress.png"
@@ -45,7 +45,7 @@ Another thing you can search for in the code is ‘wp-content’. Wp-content is 
 Another possibility you have is to add ‘wp-admin’ at the end of the homepage website URL. It’s standard for WordPress websites to have this. It allows admins or contributors to enter the backend of the website where they can make modifications to the layout, contribute with posts or adjust the website settings. Once you add ‘wp-admin’ at the end of an URL, you’re usually redirected to a page that looks like this:
 
 Once you see a screen like this appear after adding ‘/wp-admin’ to the URL of the homepage, you’ll know you’re dealing with a WordPress website.
-
+  
 ## 4. Online Tools
 
 The next possibility you have to figure out if a website is made with WordPress is by using some online tools that are there out there. The tools that we’ll mention are free to use and will give you an immediate answer.
