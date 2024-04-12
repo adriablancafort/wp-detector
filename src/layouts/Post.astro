@@ -13,7 +13,7 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
 });
 ---
 
-<Layout>
+<Layout title={frontmatter.title} description={frontmatter.description}> 
   <Header />
   <ProgressBar />
 

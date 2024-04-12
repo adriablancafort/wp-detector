@@ -5,9 +5,12 @@ import Footer from "../components/Footer.astro";
 import PostCard from "../components/PostCard.astro";
 
 const allPosts = await Astro.glob("../pages/blog/*.md");
+
+const title = "WordPress Detector Blog";
+const description = "Comparisons, analysis, and reviews of WordPress themes, plugins, and services with the unique insight of our data.";
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <Header />
   <section class="container">
     <h2 class="grid--title">Welcome to WordPress Detector <span>Blog</span></h2>

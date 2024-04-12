@@ -9,9 +9,12 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 const categoryPosts = allPosts.filter(
   (post) => post.frontmatter.author.slug === frontmatter.slug
 );
+
+const title = `${frontmatter.name} - All Posts on the WordPress Detector Blog`;
+const description = `All Blog Posts written by ${frontmatter.name}, Author on the WordPress Detector Blog`;
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <Header />
   <section class="container">
     <h2 class="grid--title">

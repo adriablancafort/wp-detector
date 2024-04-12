@@ -9,9 +9,12 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 const categoryPosts = allPosts.filter(
   (post) => post.frontmatter.category.slug === frontmatter.slug
 );
+
+const title = `${frontmatter.name} - All Posts on the WordPress Detector Blog`;
+const description = `All Blog Posts about ${frontmatter.name} Category on the WordPress Detector Blog`;
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <Header />
   <section class="container">
     <h2 class="grid--title">
@@ -61,7 +64,7 @@ const categoryPosts = allPosts.filter(
       background-size: cover;
     }
   }
-  
+
   .post--grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

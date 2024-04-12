@@ -3,9 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import ExtensionHeadline from "../components/ExtensionHeadline.astro";
 import Footer from "../components/Footer.astro";
+
+const title = "WordPress Detector Browser Extension";
+const description = "Detect WordPress Themes and Plugins effortlessly as you browse!";
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <Header />
   <ExtensionHeadline />
   <Footer />

@@ -1,3 +1,7 @@
+---
+const { title, description } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,14 +13,8 @@
       href="/wordpress-detector-favicon.svg"
     />
     <link rel="manifest" href="/manifest.json" />
-    <title>
-      WordPress Theme and Plugin Detector - Find out which WordPress theme and
-      plugin any website uses
-    </title>
-    <meta
-      name="description"
-      content="Just enter any website URL and WordPress Detector will tell you which WordPress theme and WordPress plugins it is using and much more!"
-    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
