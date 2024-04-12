@@ -1,16 +1,18 @@
 <footer>
   <div class="container">
-    <a href="/">
-      <img
-        src="/wordpress-detector-logo.svg"
-        alt="WordPress Detector Logo"
-        width="228"
-        height="50"
-      />
-    </a>
+    <div class="footer--links-container">
+      <a href="/">
+        <img
+          src="/wordpress-detector-logo.svg"
+          alt="WordPress Detector Logo"
+          width="228"
+          height="50"
+        />
+      </a>
+    </div>
     <span class="copyright--message"
-      >Copyright &copy; WP Detector. All Rights Reserved. WordPress® is a registered
-      brand of the WordPress Foudation</span
+      >Copyright &copy; WP Detector. All Rights Reserved. WordPress® is a
+      registered brand of the WordPress Foudation</span
     >
   </div>
 </footer>
@@ -21,11 +23,16 @@
     background-color: #23282d;
   }
 
+  .footer--links-container {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+
   .copyright--message {
     display: flex;
     border-top: 1px solid #555555;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
     font-size: 14px;
   }
 </style>
