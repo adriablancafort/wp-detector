@@ -12,9 +12,7 @@ const { post } = Astro.props;
   >
   <div class="post-card--info-container">
     <h2>
-      <a href={post.url} class="post-card--title"
-        >{post.frontmatter.title}</a
-      >
+      <a href={post.url} class="post-card--title">{post.frontmatter.title}</a>
     </h2>
 
     <p class="post-card--description">{post.frontmatter.description}</p>
@@ -39,6 +37,7 @@ const { post } = Astro.props;
   .post-card--info-container {
     padding: 1.5rem;
     padding-top: 1rem;
+    position: relative;
   }
 
   .post-card--image {
