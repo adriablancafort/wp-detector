@@ -50,13 +50,13 @@ Once you see a screen like this appear after adding ‘/wp-admin’ to the URL o
 
 The next possibility you have to figure out if a website is made with WordPress is by using some online tools that are there out there. The tools that we’ll mention are free to use and will give you an immediate answer.
 
-### BuiltWith
+### 4.1 BuiltWith
 
 ![Built with](https://www.elegantthemes.com/blog/wp-content/uploads/2017/08/mwp4.png)
 
 The first online tool that will help you determine if a website is made with WordPress is [BuiltWith](https://builtwith.com/). You could easily say that BuiltWith is the advanced possibility you have to discover what a website is about. If you’re deciding to go with this option, the only thing you’ll have to do is provide the online tool with the website URL and press ‘lookup’. Once you’ve done that, you’ll get a list of all kinds of things that tell something more about the website. You can find what you are looking for by scrolling through the list and searching for the Content Management System. Not only will you figure out if the website is running on WordPress, but you’ll also have a view on which version of WordPress the website has installed.
 
-### WordPress Detector
+### 4.2 WordPress Detector
 
 ![Powered by WordPress](/WordPress-Detector.webp)
 
@@ -66,13 +66,13 @@ Another tool that helps you in your quest is the [WordPress Detector](/) website
 
 Or what about an extension that saves you all the repetitive work of looking through a website’s source to find out if it’s made with WordPress? Every time you’ll visit is a website, the only thing you’ll have to do is take a look at the extension in the right corner of your website. It’ll immediately show you whether it’s made with WordPress or not. Besides that, it also shows you what other things the website is working with. After a while, it’ll help you recognize websites easier by your own.
 
-### Library Sniff Extension (Chrome)
+### 5.1 Library Sniff Extension (Chrome)
 
 ![Library Sniff Extension](https://www.elegantthemes.com/blog/wp-content/uploads/2017/08/mwp7.png)
 
 The first extension that you can use is the Library Sniff extension. This extension is only available for Google Chrome and will show you right away if the website you’re visiting is made with WordPress. Besides that, it’ll also give you more insight on the other things it’s using such as Google Analytics, jQuery and Font Awesome.
 
-### BuiltWith Add-on (Mozilla Firefox)
+### 5.2 BuiltWith Add-on (Mozilla Firefox)
 
 ![BuiltWith Add-on](https://www.elegantthemes.com/blog/wp-content/uploads/2017/08/mwp8.png)
 
