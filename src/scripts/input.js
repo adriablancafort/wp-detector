@@ -158,7 +158,7 @@ const sanatizeUrl = (url) => {
 
 const apiRequest = (inputUrl, type) => {
   return fetch(
-    `https://wp-detector.000webhostapp.com?url=${inputUrl}&type=${type}`
+    `https://api.wp-detector.com?url=${inputUrl}&type=${type}`
   ).then((response) => response.json());
 };
 
@@ -324,7 +324,7 @@ const detectPluginsCard = (plugin) => `
       <img src="${plugin.icon}" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
       <h4 class="card--title">${plugin.title}</h4>
     </div>
-    <p>Contributors: <strong>${plugin.author}</strong></p>
+    <p>Contributors: <strong>${plugin.contributors}</strong></p>
     <p>Version: <span class="badge">${plugin.version}</span></p>
     <p>Website: <a href="${plugin.website}" target="_blank">${plugin.sanatizedWebsite}</a></p>
     <p>WordPress Version: <strong>${plugin.reqWpVersion}</strong></p>
