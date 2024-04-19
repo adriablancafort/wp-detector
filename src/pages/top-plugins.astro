@@ -4,12 +4,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PluginCard from "../components/PluginCard.astro";
 
-const response = await fetch(
-  "https://wp-detector.000webhostapp.com/?url=https://wpastra.com&type=top-plugins"
-);
-const data = await response.json();
-const topThemes = data["themes"];
-
 const title = "Top Most Detected Themes by WordPress Detector";
 const description =
   "An updated list with the most comonly detected themes by WordPress Detector analyzed websites";
@@ -20,7 +14,6 @@ const description =
   <section class="container">
     <h2 class="grid--title">Top Most Detected <span>Themes</span></h2>
     <ul class="post--grid">
-      {topThemes.map((plugin) => <PluginCard plugin={plugin} />)}
     </ul>
   </section>
   <Footer />
