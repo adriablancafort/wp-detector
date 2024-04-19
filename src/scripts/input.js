@@ -324,7 +324,7 @@ const detectPluginsCard = (plugin) => `
       <img src="${plugin.icon}" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
       <h4 class="card--title">${plugin.title}</h4>
     </div>
-    <p>Author: <strong>${plugin.author}</strong></p>
+    <p>Contributors: <strong>${plugin.author}</strong></p>
     <p>Version: <span class="badge">${plugin.version}</span></p>
     <p>Website: <a href="${plugin.website}" target="_blank">${plugin.sanatizedWebsite}</a></p>
     <p>WordPress Version: <strong>${plugin.reqWpVersion}</strong></p>
