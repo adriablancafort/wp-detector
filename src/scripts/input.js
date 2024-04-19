@@ -264,19 +264,15 @@ const detectThemesCard = (theme) => `
     <h4 class="card--title">${theme.title}</h4>
     <p>Author: <strong>${theme.author}</strong></p>
     <p>Version: <span class="badge">${theme.version}</span></p>
-    <p>Website: <a href="${theme.website}" target="_blank">${
-      theme.sanatizedWebsite
-    }</a></p>
-    <p>WordPress Version: <strong>${theme.reqWpVersion} or higher</strong></p>
+    <p>Website: <a href="${theme.website}" target="_blank">${theme.sanatizedWebsite}</a></p>
+    <p>WordPress Version: <strong>${theme.reqWpVersion}</strong></p>
     <p>Tested up To: <strong>${theme.testedWpVersion}</strong></p>
-    <p>PHP Version: <strong>${theme.reqPhpVersion} or higher</strong></p>
+    <p>PHP Version: <strong>${theme.reqPhpVersion}</strong></p>
     <p class="card--description">
       <strong>Description:</strong> ${theme.description}
     </p>
   </div>
-  ${
-    theme.link
-      ? `
+  ${theme.link? `
   <div class="cart--read-more--container">
     <span class="cart--read-more">
       <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" >
@@ -284,9 +280,7 @@ const detectThemesCard = (theme) => `
       </svg>
       Read more
     </span>
-  </div>`
-      : ""
-  }
+  </div>`: ""}
 </div>`;
 
 const detectThemesSkeleton = `
@@ -327,26 +321,20 @@ const detectPluginsCard = (plugin) => `
   <img src="${plugin.banner}" alt="Plugin Banner" class="card--banner" />
   <div class="card--info-container">
     <div class="card--title-container__plugin">
-      <img src="${
-        plugin.icon
-      }" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
+      <img src="${plugin.icon}" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
       <h4 class="card--title">${plugin.title}</h4>
     </div>
     <p>Author: <strong>${plugin.author}</strong></p>
     <p>Version: <span class="badge">${plugin.version}</span></p>
-    <p>Website: <a href="${plugin.website}" target="_blank">${
-      plugin.sanatizedWebsite
-    }</a></p>
-    <p>WordPress Version: <strong>${plugin.reqWpVersion} or higher</strong></p>
+    <p>Website: <a href="${plugin.website}" target="_blank">${plugin.sanatizedWebsite}</a></p>
+    <p>WordPress Version: <strong>${plugin.reqWpVersion}</strong></p>
     <p>Tested up To: <strong>${plugin.testedWpVersion}</strong></p>
-    <p>PHP Version: <strong>${plugin.reqPhpVersion} or higher</strong></p>
+    <p>PHP Version: <strong>${plugin.reqPhpVersion}</strong></p>
     <p class="card--description">
       <strong>Description:</strong> ${plugin.description}
     </p>
   </div>
-  ${
-    plugin.link
-      ? `
+  ${plugin.link? `
   <div class="cart--read-more--container">
     <span class="cart--read-more">
       <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" >
@@ -354,9 +342,7 @@ const detectPluginsCard = (plugin) => `
       </svg>
       Read more
     </span>
-  </div>`
-      : ""
-  }
+  </div>`: ""}
 </div>`;
 
 const detectPluginsSkeleton = `
