@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
               apiRequest(inputUrl, "plugins").then((data) => {
                 pluginsContainer.innerHTML = detectPluginsTitle(websiteName);
 
-                // Shot Extension Popup
+                // Show Extension Popup
                 setTimeout(() => {
                   dialog.showModal();
                 }, 5000);
