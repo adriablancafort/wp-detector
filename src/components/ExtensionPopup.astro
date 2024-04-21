@@ -1,8 +1,14 @@
 <dialog>
   <div class="extension-popup">
-    <h1>Detect Themes and Plugins of every website you visit!</h1>
-    <p>Install the WordPress Detector Browser Extension for free today!</p>
-    <button>Get the Extension</button>
+    <div class="extension-popup--image">
+      <img
+        src="wordpress-detector-extension-popup.webp"
+        alt="Extension Popup"
+        width="400px"
+        height="auto"
+      />
+    </div>
+    <button class="extension-popup--button">Add to Chrome</button>
   </div>
 </dialog>
 
@@ -10,17 +16,24 @@
   .extension-popup {
     position: fixed;
     top: 0;
-    right: 150px;
+    right: 115px;
     width: 400px;
-    height: 400px;
-    background-color: #f8f8f8;
-    border: 1px solid #cbcbcb;
-    padding: 1rem;
+    text-align: center;
+    background-color: #eff1fe;
+    border: 1px solid #b9b9b9;
     animation: slide-down 0.2s ease-in-out;
   }
 
-  button:focus {
-    outline: none;
+  .extension-popup--image {
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+
+  .extension-popup--button {
+    font-size: 1rem;
+    padding: 0.7rem 1.7rem;
+    margin: 1rem 0;
+    border-radius: 99px;
   }
 
   @keyframes slide-down {
@@ -38,17 +51,16 @@
 <script>
   const dialog = document.querySelector("dialog");
 
-  /*
-  setTimeout(() => {
-    dialog.showModal();
-  }, 1500);
-  */
+  dialog.showModal();
 
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) {
       dialog.close();
     } else {
-      window.open("/browser-extension", "_blank");
+      window.open(
+        "https://github.com/adriablancafort/wp-detector-extension",
+        "_blank"
+      );
     }
   });
 </script>
