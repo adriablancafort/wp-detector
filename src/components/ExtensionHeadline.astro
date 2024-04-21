@@ -1,5 +1,6 @@
 ---
 import ExtensionVideo from "./ExtensionVideo.astro";
+import ExtensionPopup from "./ExtensionPopup.astro";
 ---
 
 <section class="container extension--container">
@@ -21,6 +22,8 @@ import ExtensionVideo from "./ExtensionVideo.astro";
     <ExtensionVideo />
   </div>
 </section>
+
+<ExtensionPopup />
 
 <style is:global>
   .extension--container {
@@ -91,5 +94,5 @@ import ExtensionVideo from "./ExtensionVideo.astro";
   // Show Extension Popup
   setTimeout(() => {
     dialog.showModal();
-  }, 5000);
+  }, 3000);
 </script>
