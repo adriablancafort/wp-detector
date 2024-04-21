@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const themesContainer = document.getElementById("themesContainer");
   const pluginsContainer = document.getElementById("pluginsContainer");
 
+  // From Extension Popup
+  const dialog = document.querySelector("dialog");
+
   let oldUrl = "";
 
   inputForm.addEventListener("submit", (event) => {
@@ -62,6 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
               apiRequest(inputUrl, "plugins").then((data) => {
                 pluginsContainer.innerHTML = detectPluginsTitle(websiteName);
 
+                // Shot Extension Popup
+                setTimeout(() => {
+                  dialog.showModal();
+                }, 5000);
+
                 if (data.plugins) {
                   data.plugins.forEach((plugin) => {
                     const pluginCard = document.createElement("div");
@@ -77,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   pluginsContainer.innerHTML += noPluginsDetected(websiteName);
                 }
               });
+
             } else if (data.wp === false) {
               wpContainer.innerHTML += detectWpFail(websiteName);
 
