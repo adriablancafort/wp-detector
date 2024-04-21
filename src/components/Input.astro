@@ -1,3 +1,7 @@
+---
+import ExtensionPopup from "./ExtensionPopup.astro"
+---
+
 <section class="container container__input">
   <form class="border input--form" id="inputForm">
     <input
@@ -13,6 +17,8 @@
   <div id="themesContainer"></div>
   <div id="pluginsContainer"></div>
 </section>
+
+<ExtensionPopup />
 
 <style is:global>
   .container__input {
