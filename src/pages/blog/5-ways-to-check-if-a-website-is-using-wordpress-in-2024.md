@@ -58,7 +58,7 @@ The first online tool that will help you determine if a website is made with Wor
 
 ### 4.2 WordPress Detector
 
-![Powered by WordPress](/WordPress-Detector.webp)
+![Powered by WordPress](https://private-user-images.githubusercontent.com/76774853/307578159-ba7999ae-bac2-4bbe-a736-e73aa9d6b167.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3MjIzNzksIm5iZiI6MTcxMzcyMjA3OSwicGF0aCI6Ii83Njc3NDg1My8zMDc1NzgxNTktYmE3OTk5YWUtYmFjMi00YmJlLWE3MzYtZTczYWE5ZDZiMTY3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIxVDE3NTQzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNjYTgyN2U5NDQ2NmY3ZDQ5ZmJhNDNjOGViODRjZTI3YWI4ZTQ1ODYwMzMyNzc0NjE3YjY4YzMzZTJjOTM1YWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.NhRcjrNNAP3ZjsNnHW1KLjmCHAwWU2lHnHX5Dx16fRM)
 
 Another tool that helps you in your quest is the [WordPress Detector](/) website. This one is quite different from the BuiltWith website. The Builtwith tool tries to provide you with as many answers as possible whereas the ‘Is It WordPress?’ online tool only gives you a yes or no answer. That’s great if you’re in a hurry or if you don’t know a lot about the other information that is being provided.
 
