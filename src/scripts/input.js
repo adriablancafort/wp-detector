@@ -271,15 +271,13 @@ const detectThemesCard = (theme) => `
   <img src="${theme.banner}" alt="Theme Banner" class="card--banner" />
   <div class="card--info-container">
     <h4 class="card--title">${theme.title}</h4>
-    <p>Author: <strong>${theme.author}</strong></p>
-    <p>Version: <span class="badge">${theme.version}</span></p>
-    <p>Website: <a href="${theme.website}" target="_blank">${theme.sanatizedWebsite}</a></p>
-    <p>WordPress Version: <strong>${theme.reqWpVersion}</strong></p>
-    <p>Tested up To: <strong>${theme.testedWpVersion}</strong></p>
-    <p>PHP Version: <strong>${theme.reqPhpVersion}</strong></p>
-    <p class="card--description">
-      <strong>Description:</strong> ${theme.description}
-    </p>
+    ${theme.author ? `<p>Author: <strong>${theme.author}</strong></p>` : ""}
+    ${theme.version ? `<p>Version: <span class="badge">${theme.version}</span></p>` : ""}
+    ${theme.website && theme.sanatizedWebsite ? `<p>Website: <a href="${theme.website}" target="_blank">${theme.sanatizedWebsite}</a></p>` : ""}
+    ${theme.reqWpVersion ? `<p>WordPress Version: <strong>${theme.reqWpVersion}</strong></p>` : ""}
+    ${theme.testedWpVersion ? `<p>Tested up To: <strong>${theme.testedWpVersion}</strong></p>` : ""}
+    ${theme.reqPhpVersion ? `<p>PHP Version: <strong>${theme.reqPhpVersion}</strong></p>` : ""}
+    ${theme.description ? `<p class="card--description"><strong>Description:</strong> ${theme.description}</p>` : ""}
   </div>
   ${theme.link? `
   <div class="cart--read-more--container">
@@ -333,15 +331,13 @@ const detectPluginsCard = (plugin) => `
       <img src="${plugin.icon}" alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
       <h4 class="card--title">${plugin.title}</h4>
     </div>
-    <p>Contributors: <strong>${plugin.contributors}</strong></p>
-    <p>Version: <span class="badge">${plugin.version}</span></p>
-    <p>Website: <a href="${plugin.website}" target="_blank">${plugin.sanatizedWebsite}</a></p>
-    <p>WordPress Version: <strong>${plugin.reqWpVersion}</strong></p>
-    <p>Tested up To: <strong>${plugin.testedWpVersion}</strong></p>
-    <p>PHP Version: <strong>${plugin.reqPhpVersion}</strong></p>
-    <p class="card--description">
-      <strong>Description:</strong> ${plugin.description}
-    </p>
+    ${plugin.contributors ? `<p>Contributors: <strong>${plugin.contributors}</strong></p>` : ""}
+    ${plugin.version ? `<p>Version: <span class="badge">${plugin.version}</span></p>` : ""}
+    ${plugin.website && plugin.sanatizedWebsite ? `<p>Website: <a href="${plugin.website}" target="_blank">${plugin.sanatizedWebsite}</a></p>` : ""}
+    ${plugin.reqWpVersion ? `<p>WordPress Version: <strong>${plugin.reqWpVersion}</strong></p>` : ""}
+    ${plugin.testedWpVersion ? `<p>Tested up To: <strong>${plugin.testedWpVersion}</strong></p>` : ""}
+    ${plugin.reqPhpVersion ? `<p>PHP Version: <strong>${plugin.reqPhpVersion}</strong></p>` : ""}
+    ${plugin.description ? `<p class="card--description"><strong>Description:</strong> ${plugin.description}</p>` : ""}
   </div>
   ${plugin.link? `
   <div class="cart--read-more--container">
