@@ -10,10 +10,13 @@
         />
       </a>
     </div>
-    <span class="copyright--message"
-      >Copyright &copy; WP Detector. All Rights Reserved. WordPress® is a
-      registered brand of the WordPress Foudation</span
-    >
+    <span class="copyright--message">
+      <p>
+        Copyright &copy; WP Detector. All Rights Reserved. WordPress® is a
+        registered brand of the WordPress Foudation
+      </p>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </span>
   </div>
 </footer>
 
@@ -30,9 +33,19 @@
 
   .copyright--message {
     display: flex;
+    justify-content: space-between;
     border-top: 1px solid #555555;
     padding-top: 1rem;
     padding-bottom: 2rem;
     font-size: 14px;
+  }
+
+  .copyright--message a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .copyright--message a:hover {
+    color: #cbcbcb;
   }
 </style>
