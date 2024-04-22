@@ -1,5 +1,5 @@
 ---
-import ExtensionPopup from "./ExtensionPopup.astro"
+import ExtensionPopup from "./ExtensionPopup.astro";
 ---
 
 <section class="container container__input">
@@ -10,7 +10,10 @@ import ExtensionPopup from "./ExtensionPopup.astro"
       id="inputUrl"
       placeholder="Enter any website"
     />
-    <button class="button__input" type="submit">Analize Website</button>
+    <button class="button__input" type="submit"
+      >Analize<span class="hide-1000"> Website</span>
+    </button
+    >
   </form>
 
   <div id="wpContainer"></div>
@@ -219,7 +222,7 @@ import ExtensionPopup from "./ExtensionPopup.astro"
 
   .loading--banner {
     width: 100%;
-    height:200px;
+    height: 200px;
     border-bottom: 1px solid #cbcbcb;
   }
 
