@@ -12,8 +12,7 @@ import ExtensionPopup from "./ExtensionPopup.astro";
     />
     <button class="button__input" type="submit"
       >Analize<span class="hide-1000"> Website</span>
-    </button
-    >
+    </button>
   </form>
 
   <div id="wpContainer"></div>
@@ -103,6 +102,14 @@ import ExtensionPopup from "./ExtensionPopup.astro";
     object-fit: contain;
     margin-bottom: -1rem;
     border-bottom: 1px solid #cbcbcb;
+  }
+
+  .card--banner__theme {
+    aspect-ratio: 4 / 3;
+  }
+
+  .card--banner__plugin {
+    aspect-ratio: 1544 / 500;
   }
 
   .card--icon {
@@ -213,18 +220,6 @@ import ExtensionPopup from "./ExtensionPopup.astro";
     background-size: 270%;
     background-position: right 20px top 0;
     animation: skeleton-loading 1s ease infinite;
-  }
-
-  .loading--image {
-    width: 100%;
-    height: 300px;
-    border-bottom: 1px solid #cbcbcb;
-  }
-
-  .loading--banner {
-    width: 100%;
-    height: 200px;
-    border-bottom: 1px solid #cbcbcb;
   }
 
   .loading--icon {
