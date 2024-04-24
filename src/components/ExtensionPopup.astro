@@ -9,7 +9,7 @@
       />
     </div>
     <button class="extension-popup--button"
-      >Try the <span id="extensionButtonMessage">Browser Extension</span></button
+      >Try the <span id="extensionButtonMessage">Chrome Extension</span></button
     >
   </div>
 </dialog>
@@ -54,9 +54,12 @@
   import { detectBrowser } from "../scripts/detect-browser.js";
 
   const dialog = document.querySelector("dialog");
-  const extensionButtonMessage = document.getElementById("extensionButtonMessage");
-  let storeUrl;
+  const extensionButtonMessage = document.getElementById(
+    "extensionButtonMessage"
+  );
+  let storeUrl = "https://github.com/adriablancafort/wp-detector-api";
 
+  /*
   switch (detectBrowser()) {
     case "chrome":
       extensionButtonMessage.textContent = "Chrome Extension";
@@ -71,6 +74,7 @@
       extensionButtonMessage.textContent = "Edge Extension";
       storeUrl = "https://microsoftedge.microsoft.com/addons";
   }
+  */
 
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) {
