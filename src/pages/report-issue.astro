@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Report and Issue or Make a Suggestion";
+const description =
+  "Report and Issue or Make a Suggestion - WordPress Detector";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <section class="container container__contact">
+    <iframe
+      data-tally-src="https://tally.so/r/nGr1Mo?transparentBackground=1&hideTitle=1"
+      width="100%"
+      height="100%"
+    >
+    </iframe>
+  </section>
+  <Footer />
+</Layout>
+
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+<style>
+  .container__contact {
+    height: 100vh;
+  }
+</style>
