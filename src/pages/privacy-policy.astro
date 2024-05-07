@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "WordPress Detector - Privacy Policy";
+const description = "Privacy Policy page at WordPress Detector";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <section class="container container__post">
+    <article class="post--content">
+      <h1>Privacy Policy</h1>
+      <p>
+        At WordPress Detector, we are committed to protecting your privacy. This
+        Privacy Policy outlines how we collect, use, and safeguard your personal
+        information when you use our Chrome extension and website.
+      </p>
+      <h2>1. Information Collection</h2>
+      <p>
+        When you use our Chrome extension, we do not collect any personal data
+        from you. We detect if a website is using WordPress locally without
+        accessing any third-party services. However, if you open the extension
+        popup, it may communicate with our API to detect the themes and plugins
+        on a website. This communication only involves sending the URL of the
+        website.
+      </p>
+      <p>
+        Similarly, when you use the search box on our website to detect themes
+        and plugins of a specific website, the process involves communication
+        with our API. Again, this only requires the URL of the website.
+      </p>
+      <h2>2. Use of Information</h2>
+      <p>
+        Any information collected during the detection process is solely used to
+        provide you with the requested information about the WordPress themes
+        and plugins used on a website. We do not use this information for any
+        other purpose.
+      </p>
+      <h2>3. Affiliated Links</h2>
+      <p>
+        In some cases, we may provide links to themes and plugins detected on a
+        website. Some of these links may be affiliated, meaning we may earn a
+        commission if you make a purchase after clicking the link. The
+        commission may vary depending on the specific theme or plugin and the
+        terms of the affiliate program.
+      </p>
+      <h2>4. Updates to Privacy Policy</h2>
+      <p>
+        We reserve the right to update the internal functionality of our
+        extension and website, which may result in changes to this Privacy
+        Policy. Any updates will be reflected on this page.
+      </p>
+      <h2>5. Contact Us</h2>
+      <p>
+        If you have any questions or concerns about our Privacy Policy, please
+        contact us at suport@wp-detector.com.
+      </p>
+    </article>
+  </section>
+  <Footer />
+</Layout>
+
+<style is:global>
+  .container__post {
+    max-width: 750px;
+    padding-bottom: 4rem;
+  }
+
+  .post--content p {
+    line-height: 2.2rem;
+    font-size: 1.2em;
+    padding-bottom: 1rem;
+  }
+
+  .post--content h1,
+  h2,
+  h2,
+  h4,
+  h5,
+  h6 {
+    font-family: "EB Garamond";
+    font-weight: 400;
+  }
+
+  .post--content h1 {
+    font-size: 4rem;
+    padding: 2rem 0;
+  }
+
+  .post--content h2 {
+    font-size: 3rem;
+    padding: 2rem 0;
+  }
+
+  .post--content h2,
+  h4,
+  h5,
+  h6 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+  }
+
+  .post--content li {
+    font-size: 2rem;
+    padding: 1rem 0;
+    font-family: "Inter";
+    list-style: none;
+  }
+
+  .post--content img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+</style>
