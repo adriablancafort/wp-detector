@@ -36,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
         oldUrl = inputUrl;
         inputUrl = sanatizeUrl(inputUrl);
 
-        apiRequest(inputUrl, "wp")
+        apiRequest("wp", inputUrl, null, null)
           .then((data) => {
             wpContainer.innerHTML = showingResultsTitle(websiteName);
 
             if (data.wp === true) {
               wpContainer.innerHTML += detectWpSuccess(websiteName);
 
-              apiRequest(inputUrl, "themes").then((data) => {
+              apiRequest("themes", inputUrl, null, null).then((data) => {
                 themesContainer.innerHTML = detectThemesTitle(websiteName);
 
                 if (data.themes.length) {
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
               });
 
-              apiRequest(inputUrl, "plugins").then((data) => {
+              apiRequest("plugins", inputUrl, null, null).then((data) => {
                 pluginsContainer.innerHTML = detectPluginsTitle(websiteName);
 
                 // Show Extension Popup
@@ -85,11 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
                   pluginsContainer.innerHTML += noPluginsDetected(websiteName);
                 }
               });
-
             } else if (data.wp === false) {
               wpContainer.innerHTML += detectWpFail(websiteName);
 
-              apiRequest(inputUrl, "top-themes").then((data) => {
+              apiRequest("top-themes", null, 5, 1).then((data) => {
                 themesContainer.innerHTML = topThemesTitle;
                 data.themes.forEach((theme) => {
                   const themeCard = document.createElement("div");
@@ -103,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
               });
 
-              apiRequest(inputUrl, "top-plugins").then((data) => {
+              apiRequest("top-plugins", null, 5, 1).then((data) => {
                 pluginsContainer.innerHTML = topPluginsTitle;
                 data.plugins.forEach((plugin) => {
                   const pluginCard = document.createElement("div");
@@ -165,9 +164,9 @@ const sanatizeUrl = (url) => {
   return url;
 };
 
-const apiRequest = (inputUrl, type) => {
+const apiRequest = (type, inputUrl, quantity, page) => {
   return fetch(
-    `https://api.wp-detector.com?url=${inputUrl}&type=${type}`
+    `https://api.wp-detector.com?type=${type}&url=${inputUrl}&quantity=${quantity}&page=${page}`
   ).then((response) => response.json());
 };
 
