@@ -3,36 +3,23 @@ const { plugin } = Astro.props;
 ---
 
 <div class="card card--hover border">
-  <img src={plugin.banner} alt="Plugin Banner" class="card--banner" />
+  <img src={plugin.banner} alt="Theme Screenshot" class="card--banner card--banner__plugin loading--skeleton" />
   <div class="card--info-container">
     <div class="card--title-container__plugin">
-      <img
-        src={
-        plugin.icon
-      } 
-        alt="Plugin Icon"
-        class="card--icon"
-        width="60px"
-        height="60px"
-      />
+      <img src={plugin.icon} alt="Plugin Icon" class="card--icon" width="60px" height="60px" />
       <h4 class="card--title">{plugin.title}</h4>
     </div>
-    <p>Author: <strong>{plugin.author}</strong></p>
-    <p>Version: <span class="badge">{plugin.version}</span></p>
-    <p>
-      Website: <a href="{plugin.website}" target="_blank"
-        >{plugin.sanatizedWebsite}</a>
-    </p>
-    <p>WordPress Version: <strong>{plugin.reqWpVersion} or higher</strong></p>
-    <p>Tested up To: <strong>{plugin.testedWpVersion}</strong></p>
-    <p>PHP Version: <strong>{plugin.reqPhpVersion} or higher</strong></p>
-    <p class="card--description">
-      <strong>Description:</strong> {plugin.description}
-    </p>
+    {plugin.contributors && <p>Contributors: <strong>{plugin.contributors}</strong></p>}
+    {plugin.version && <p>Version: <span class="badge">{plugin.version}</span></p>}
+    {plugin.website && plugin.sanatizedWebsite && <p>Website: <a href="{plugin.website}" target="_blank">{plugin.sanatizedWebsite}</a></p>}
+    {plugin.lastUpdated && <p>Last Updated: <strong>{plugin.lastUpdated}</strong></p>}
+    {plugin.activeInstallations && <p>Active Installations: <strong>{plugin.activeInstallations}</strong></p>}
+    {plugin.reqWpVersion && <p>WordPress Version: <strong>{plugin.reqWpVersion}</strong></p>}
+    {plugin.testedWpVersion && <p>Tested up To: <strong>{plugin.testedWpVersion}</strong></p>}
+    {plugin.reqPhpVersion && <p>PHP Version: <strong>{plugin.reqPhpVersion}</strong></p>}
+    {plugin.description && <p class="card--description"><strong>Description:</strong> {plugin.description}</p>}
   </div>
-  {
-    plugin.link
-      ? 
+  {plugin.link && 
   <div class="cart--read-more--container">
     <span class="cart--read-more">
       <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" height="25px" width="25px" >
@@ -40,7 +27,81 @@ const { plugin } = Astro.props;
       </svg>
       Read more
     </span>
-  </div>
-      : ""
-  }
+  </div>}
 </div>
+
+<style>
+  .card {
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    overflow: hidden;
+    margin-top: 1rem;
+    transition: all 0.1s;
+  }
+
+  .card--hover:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .card--banner {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: -1rem;
+    border-bottom: 1px solid #cbcbcb;
+  }
+
+  .card--icon {
+    margin-right: 1rem;
+    border-radius: 2px;
+  }
+
+  .card--info-container {
+    padding: 1.5rem;
+  }
+
+  .card--title {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .card--title-container__plugin {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .card--description {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .cart--read-more--container {
+    position: relative;
+    height: 2.5rem;
+  }
+
+  .cart--read-more {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .cart--read-more:hover {
+    color: #525252;
+  }
+
+  .badge {
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #213fd4;
+  }
+</style>

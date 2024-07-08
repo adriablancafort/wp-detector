@@ -14,15 +14,15 @@ const data = await response.json();
 const themes = data.themes;
 ---
 
-<Layout title={title} description={description} >
-    <Header />
-    <section class="container">
-        <h1 class="grid--title">Top Most Detected <span>Themes</span></h1>
-        <ul class="post--grid">
-            {themes.map(theme => <ThemeCard theme={theme} />)}
-        </ul>
-    </section>
-    <Footer />
+<Layout title={title} description={description}>
+  <Header />
+  <section class="container">
+    <h1 class="grid--title">Top Most Detected <span>Themes</span></h1>
+    <ul class="post--grid">
+      {themes.map((theme) => <ThemeCard theme={theme} />)}
+    </ul>
+  </section>
+  <Footer />
 </Layout>
 
 <style is:global>
