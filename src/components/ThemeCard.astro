@@ -2,7 +2,7 @@
 const { theme } = Astro.props;
 ---
 
-<div class="card card--hover border">
+<div class="card card--hover border" data-link={theme.link}>
   <img src={theme.screenshot} alt="Theme Screenshot" class="card--banner card--banner__theme loading--skeleton" />
   <div class="card--info-container">
     <h4 class="card--title">{theme.title}</h4>

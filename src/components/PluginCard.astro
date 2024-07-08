@@ -2,7 +2,7 @@
 const { plugin } = Astro.props;
 ---
 
-<div class="card card--hover border">
+<div class="card card--hover border" data-link={plugin.link}>
   <img src={plugin.banner} alt="Theme Screenshot" class="card--banner card--banner__plugin loading--skeleton" />
   <div class="card--info-container">
     <div class="card--title-container__plugin">
@@ -105,3 +105,7 @@ const { plugin } = Astro.props;
     background-color: #213fd4;
   }
 </style>
+
+<script>
+
+</script>
