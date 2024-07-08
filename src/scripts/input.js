@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (data.wp === false) {
               wpContainer.innerHTML += detectWpFail(websiteName);
 
-              apiRequest("top-themes", null, 5, 1).then((data) => {
+              apiRequest("top-themes", null, 3, 1).then((data) => {
                 themesContainer.innerHTML = topThemesTitle;
                 data.themes.forEach((theme) => {
                   const themeCard = document.createElement("div");
@@ -100,9 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
                   }
                   themesContainer.appendChild(themeCard);
                 });
+                const viewMoreButton = document.createElement("div");
+                viewMoreButton.innerHTML = viewMore("View all Most Detected Themes", "/top-themes");
+                themesContainer.appendChild(viewMoreButton);
               });
 
-              apiRequest("top-plugins", null, 5, 1).then((data) => {
+              apiRequest("top-plugins", null, 3, 1).then((data) => {
                 pluginsContainer.innerHTML = topPluginsTitle;
                 data.plugins.forEach((plugin) => {
                   const pluginCard = document.createElement("div");
@@ -114,6 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
                   }
                   pluginsContainer.appendChild(pluginCard);
                 });
+                const viewMoreButton = document.createElement("div");
+                viewMoreButton.innerHTML = viewMore("View all Most Detected Plugins", "/top-plugins");
+                pluginsContainer.appendChild(viewMoreButton);
               });
             }
           })
@@ -172,6 +178,13 @@ const apiRequest = (type, inputUrl, quantity, page) => {
 
 // Elements
 
+const viewMore = (text, link) => `
+<div class="button-container">
+  <a href="${link}" target="_blank">
+    <button>${text}</button>
+  </a>
+</div>`;
+
 const invalidUrl = `
 <p class="input--invalid-message">
   Invalid URL. Please enter a valid URL.
@@ -209,12 +222,12 @@ const detectPluginsTitle = (websiteName) => `
 
 const topThemesTitle = `
 <h3 class="input--section-title">
-  Top 5 most commonly detected <strong>themes</strong>:
+  Top 3 most commonly detected <strong>themes</strong>:
 </h3>`;
 
 const topPluginsTitle = `
 <h3 class="input--section-title">
-  Top 5 most commonly detected <strong>plugins</strong>:
+  Top 3 most commonly detected <strong>plugins</strong>:
 </h3>`;
 
 const detectWpSuccess = (websiteName) => `
