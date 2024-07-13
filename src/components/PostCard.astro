@@ -8,6 +8,7 @@ const { post } = Astro.props;
       src={post.frontmatter.image.source}
       alt={post.frontmatter.image.alt}
       class="post-card--image"
+      transition:name="post-image"
     /></a
   >
   <div class="post-card--info-container">

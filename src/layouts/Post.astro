@@ -13,7 +13,7 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
 });
 ---
 
-<Layout title={frontmatter.title} description={frontmatter.description}> 
+<Layout title={frontmatter.title} description={frontmatter.description}>
   <Header />
   <ProgressBar />
 
@@ -36,6 +36,7 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
       src={frontmatter.image.source}
       alt={frontmatter.image.alt}
       class="post--image"
+      transition:name="post-image"
     />
 
     <TableOfContents headings={headings} />
