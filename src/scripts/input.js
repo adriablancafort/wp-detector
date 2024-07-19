@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Show Extension Popup
                 setTimeout(() => {
                   dialog.showModal();
-                }, 5000);
+                }, 8000);
 
                 if (data.plugins.length) {
                   data.plugins.forEach((plugin) => {
