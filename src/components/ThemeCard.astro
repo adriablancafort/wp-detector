@@ -8,7 +8,7 @@ const { theme } = Astro.props;
     <h4 class="card--title">{theme.title}</h4>
     {theme.author && <p>Author: <strong>{theme.author}</strong></p>}
     {theme.version && <p>Version: <span class="badge">{theme.version}</span></p>}
-    {theme.website && theme.sanatizedWebsite && <p>Website: <a href={theme.website} target="_blank">{theme.sanatizedWebsite}</a></p>}
+    {theme.website && theme.sanatizedWebsite && <p>Website: <a href={theme.website} target="_blank" rel="nofollow">{theme.sanatizedWebsite}</a></p>}
     {theme.lastUpdated && <p>Last Updated: <strong>{theme.lastUpdated}</strong></p>}
     {theme.activeInstallations && <p>Active Installations: <strong>{theme.activeInstallations}</strong></p>}
     {theme.reqWpVersion && <p>WordPress Version: <strong>{theme.reqWpVersion}</strong></p>}
