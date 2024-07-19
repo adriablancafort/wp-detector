@@ -1,0 +1,148 @@
+<section class="container container__faqs">
+  <div itemscope itemtype="https://schema.org/FAQPage" class="card border">
+    <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary itemprop="name">
+        <h2>How to tell if a website is made with WordPress?</h2>
+      </summary>
+      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p>There are various ways to check if a website is made with WordPress:</p>
+        <ul>
+          <li>Check if the source code contains “wp-content”.</li>
+          <li>Add “/wp-admin” after the homepage URL.</li>
+          <li>Look for "Powered by WordPress" in the footer, which is often found in WordPress websites.</li>
+        </ul>
+      </div>
+    </details>
+    <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary itemprop="name">
+        <h2>How do you find which WordPress theme a site is using?</h2>
+      </summary>
+      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Right click on the web page and select "View page source". 
+          Search "/wp-content/themes/" in the source code. 
+          You will be able to determine the theme slug by seeing what proceeds.
+          Search the theme slug to find the theme name and the rest of information.
+        </p>
+      </div>
+    </details>
+    <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary itemprop="name">
+        <h2>How to find out the plugins used by a WordPress website?</h2>
+      </summary>
+      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Right click on the web page and select "View page source". 
+          Search "/wp-content/plugins/" in the source code. 
+          You will be able to determine the plugin slugs by seeing what proceeds.
+          Search the plugin slugs found to find theplugin name and the rest of information.
+        </p>
+      </div>
+    </details>
+    <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary itemprop="name">
+        <h2>What is WordPress Detector?</h2>
+      </summary>
+      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Have you ever come across a website and wondered if Is it WP or 
+          What WP theme is that website using? 
+        </p>
+        <p>
+          WordPress detector is the best free online WP theme detector tool.
+          You just introduce any website URL and WP Detector will detect all WordPress 
+          themes and WordPress plugins it is using!
+        </p>
+        <p>
+          If you find a website built using WordPress and want to know how they created it,
+          then WPDetector is the tool to go.
+        </p>
+      </div>
+    </details>
+    <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary itemprop="name">
+        <h2>Is WordPress Detector accurate?</h2>
+      </summary>
+      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Yes. WordPress Detector is the most accurate tool to find the WordPress themes 
+          and plugins used by any website.
+          All the themes and plugins that are reported is because their slug is found in the website.
+        </p>
+      </div>
+    </details>
+    <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary itemprop="name">
+        <h2>Can WordPress Detector detect all plugins and themes?</h2>
+      </summary>
+      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          WordPress Detector detects as many themes and plugins as it is possible to detect used in any WordPress website. It automatically inspects the source code for and runs extra manual checks, which makes it the most capable WordPress theme detector and plugin detector.
+        </p>
+        <p>
+          However, some websites may be heavily configured in which case, 
+          only a few plugins and themes might be detected.
+        </p>
+      </div>
+    </details>
+    <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+      <summary itemprop="name">
+        <h2>Is using WordPress detector harmful to a website or is it hacking the website?</h2>
+      </summary>
+      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          No, WordPress detector analyzes the HTML code of the website and identifies 
+          themes and plugins. It is equivalent to manually inspect the soure code with 
+          your browser but WordPress detector automates the process and performs it faster.
+          So its not intrusive for the analyzed website nor it is hacking it.
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<style is:global>
+  .container__faqs {
+    max-width: 500px;
+    padding-bottom: 4rem;
+    animation: fade-in-up 1.1s ease-out;
+  }
+
+  details div {
+    padding: 1rem 1.5em;
+    font-size: 1.1em;
+    line-height: 1.6em;
+    border-bottom: 1px solid #cbcbcb;
+  }
+
+  details li {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  details p {
+    margin-bottom: 0.5rem;
+  }
+
+  summary {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border-bottom: 1px solid #cbcbcb;
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:after {
+    font-size: 1.5rem;
+    content: "\002B";
+  }
+
+  details[open] summary:after {
+    content: "\00D7";
+  }
+</style>
