@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const stars = parseInt(urlParams.get("stars"), 10);
+        if (stars >= 4) {
+          window.location.href = "https://chromewebstore.google.com/detail/wordpress-theme-and-plugi/ckddhlieecghofpfojemicbieacljgji";
+        } else {
+          window.location.href = "/report-issue";
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
