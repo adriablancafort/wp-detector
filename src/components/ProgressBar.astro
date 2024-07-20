@@ -2,14 +2,13 @@
   <div class="progress-bar" id="progressBar"></div>
 </div>
 
-<style>
+<style is:global>
   .progress-container {
     position: sticky;
     top: 85px;
     width: 100%;
     height: 3px;
     overflow: hidden;
-    
   }
 
   .progress-bar {
@@ -20,10 +19,10 @@
 </style>
 
 <script>
-    window.addEventListener('scroll', () => {
-        const totalHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPosition = window.scrollY;
-        const progress = (scrollPosition / totalHeight) * 100;
-        document.getElementById('progressBar').style.width = progress + '%';
-    });
+  window.addEventListener("scroll", () => {
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const progress = (scrollPosition / totalHeight) * 100;
+    document.getElementById("progressBar").style.width = progress + "%";
+  });
 </script>
