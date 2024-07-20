@@ -20,6 +20,7 @@ const themes = data.themes;
   <Header />
   <section class="container">
     <h1 class="grid--title">Top Most Detected <span>Themes</span></h1>
+    <p class="grid--description">All the WordPress themes detected by <a href="/">WordPress Detector</a> ordered by number of times detected.</p>
     <ul class="post--grid">
       {themes.map((theme) => <ThemeCard theme={theme} />)}
     </ul>
@@ -31,7 +32,7 @@ const themes = data.themes;
   .grid--title {
     font-size: 4rem;
     text-align: center;
-    padding: 3rem 0;
+    margin-top: 3rem;
   }
 
   .grid--title span {
@@ -47,12 +48,19 @@ const themes = data.themes;
       height: 1rem;
 
       z-index: -1;
-      background-image: url("/underline.svg");
+      background-image: url("/images/underline.svg");
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
+  .grid--description {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    font-size: 1.2em;
+  }
+  
   .post--grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
