@@ -51,30 +51,11 @@
 </style>
 
 <script>
-  import { detectBrowser } from "../scripts/detect-browser.js";
-
   const dialog = document.querySelector("dialog");
   const extensionButtonMessage = document.getElementById(
     "extensionButtonMessage"
   );
   let storeUrl = "https://chromewebstore.google.com/detail/wordpress-theme-and-plugi/ckddhlieecghofpfojemicbieacljgji";
-
-  /*
-  switch (detectBrowser()) {
-    case "chrome":
-      extensionButtonMessage.textContent = "Chrome Extension";
-      storeUrl = "https://chrome.google.com/webstore";
-    case "firefox":
-      extensionButtonMessage.textContent = "Firefox Extension";
-      storeUrl = "https://addons.mozilla.org";
-    case "safari":
-      extensionButtonMessage.textContent = "Safari Extension";
-      storeUrl = "https://safari-extensions.apple.com";
-    case "edge":
-      extensionButtonMessage.textContent = "Edge Extension";
-      storeUrl = "https://microsoftedge.microsoft.com/addons";
-  }
-  */
 
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) {
