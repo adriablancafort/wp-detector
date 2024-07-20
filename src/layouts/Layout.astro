@@ -7,14 +7,13 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/wordpress-detector-favicon.svg"
-    />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/images/wordpress-detector-favicon.svg"/>
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="manifest" href="/manifest.json" />
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
@@ -26,19 +25,22 @@ const { title, description } = Astro.props;
   @font-face {
     font-family: "Inter";
     font-weight: 400;
-    src: url("../fonts/inter-400.woff2") format("woff2");
+    src: url("/fonts/inter-400.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Inter";
     font-weight: 700;
-    src: url("../fonts/inter-700.woff2") format("woff2");
+    src: url("/fonts/inter-700.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "EB Garamond";
     font-weight: 400;
-    src: url("../fonts/eb-garamond.woff2") format("woff2");
+    src: url("/fonts/eb-garamond.woff2") format("woff2");
+    font-display: swap;
   }
 
   * {
