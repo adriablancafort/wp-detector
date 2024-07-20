@@ -4,8 +4,9 @@
       <img
         src="/images/wordpress-detector-extension-popup.png"
         alt="Extension Popup"
-        width="400px"
+        width="400"
         height="auto"
+        loading="lazy"
       />
     </div>
     <button class="extension-popup--button"
@@ -55,7 +56,8 @@
   const extensionButtonMessage = document.getElementById(
     "extensionButtonMessage"
   );
-  let storeUrl = "https://chromewebstore.google.com/detail/wordpress-theme-and-plugi/ckddhlieecghofpfojemicbieacljgji";
+  let storeUrl =
+    "https://chromewebstore.google.com/detail/wordpress-theme-and-plugi/ckddhlieecghofpfojemicbieacljgji";
 
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) {
