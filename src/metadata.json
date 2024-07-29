@@ -19,8 +19,8 @@
             "type": "website",
             "url": "https://wp-detector.com",
             "image": {
-                "url": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp.webp",
-                "secureUrl": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp.webp",
+                "url": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp",
+                "secureUrl": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp",
                 "type": "image/webp",
                 "width": 1200,
                 "height": 630,
@@ -33,7 +33,7 @@
             "creator": "@WPDet",
             "card": "summary_large_image",
             "site": "@WPDet",
-            "image": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp.webp",
+            "image": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp",
             "imageAlt": "WordPress Theme and Plugin Detector"
         }
     }
