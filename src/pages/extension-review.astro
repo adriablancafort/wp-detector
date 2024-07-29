@@ -6,8 +6,8 @@
         const urlParams = new URLSearchParams(window.location.search);
         const stars = parseInt(urlParams.get("stars"), 10);
         if (stars >= 4) {
-          const browser = parseInt(urlParams.get("browser"), 10);
-          if (browser.toLowerCase() === "chrome") {
+          const browser = urlParams.get("browser");
+          if (browser === "chrome") {
             window.location.href =
               "https://chromewebstore.google.com/detail/wordpress-theme-and-plugi/ckddhlieecghofpfojemicbieacljgji";
           }
