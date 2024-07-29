@@ -28,12 +28,19 @@ const { seo } = Astro.props;
       noindex={seo?.noindex ?? metadata.default.noindex}
       nofollow={seo?.nofollow ?? metadata.default.nofollow}
       openGraph={{
-        title: seo?.openGraph?.title ?? metadata.default.openGraph.title,
-        description:
-          seo?.openGraph?.description ?? metadata.default.openGraph.description,
-        type: seo?.openGraph?.type ?? metadata.default.openGraph.type,
-        url: seo?.openGraph?.url ?? metadata.default.openGraph.url,
-        image: seo?.openGraph?.image ?? metadata.default.openGraph.image,
+        basic: {
+          title:
+            seo?.openGraph?.title ??
+            metadata.default.openGraph.title,
+          type:
+            seo?.openGraph?.type ??
+            metadata.default.openGraph.type,
+          image:
+            seo?.openGraph?.image ??
+            metadata.default.openGraph.image.url,
+          url:
+            seo?.openGraph?.url ?? metadata.default.openGraph.url,
+        },
         ...(seo?.openGraph?.article && {
           article: {
             modifiedTime: seo?.openGraph?.article?.modifiedTime ?? null,
@@ -41,6 +48,12 @@ const { seo } = Astro.props;
             section: seo?.openGraph?.article?.section ?? null,
           },
         }),
+        optional: {
+          description:
+            seo?.openGraph?.description ??
+            metadata.default.openGraph?.optional?.description ??
+            "",
+        },
       }}
       twitter={{
         title: seo?.twitter?.title ?? metadata.default.twitter.title,

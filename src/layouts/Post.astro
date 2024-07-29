@@ -12,6 +12,10 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
   day: "numeric",
 });
 
+// Extract the slug from the URL path
+const urlPath = Astro.url.pathname;
+const postSlug = urlPath.split("/").filter(Boolean).pop();
+
 const seo = {
   title: frontmatter.title,
   description: frontmatter.description,
@@ -19,32 +23,18 @@ const seo = {
     title: frontmatter.title,
     description: frontmatter.description,
     type: "article",
-    url: `https://wp-detector.com/blog/${frontmatter.slug}`,
-    image: {
-      url: frontmatter.image.source,
-      alt: frontmatter.image.alt,
-    },
+    url: `https://wp-detector.com/blog/${postSlug}`,
+    image: frontmatter.image.source,
     article: {
       modifiedTime: frontmatter.date,
-      authors: [
-        {
-          name: frontmatter.author.name,
-          url: `https://wp-detector.com/blog/author/${frontmatter.author.slug}`,
-        },
-      ],
-      section: {
-        name: frontmatter.category.name,
-        url: `https://wp-detector.com/blog/category/${frontmatter.category.slug}`,
-      },
+      authors: [frontmatter.author.name],
+      section: frontmatter.category.name,
     },
   },
   twitter: {
     title: frontmatter.title,
     description: frontmatter.description,
-    image: {
-      url: frontmatter.image.source,
-      alt: frontmatter.image.alt,
-    },
+    image: frontmatter.image.source,
   },
 };
 ---
