@@ -11,9 +11,37 @@ const updatedDate = new Date(frontmatter.date).toLocaleDateString("en", {
   month: "long",
   day: "numeric",
 });
+
+const seo = {
+  title: frontmatter.title,
+  description: frontmatter.description,
+  openGraph: {
+    title: frontmatter.title,
+    description: frontmatter.description,
+    type: "article",
+    url: `https://wp-detector.com/blog/${frontmatter.slug}`,
+    article: {
+      modifiedTime: frontmatter.date,
+      authors: [
+        {
+          name: frontmatter.author.name,
+          url: `https://wp-detector.com/blog/author/${frontmatter.author.slug}`,
+        },
+      ],
+      section: {
+        name: frontmatter.category.name,
+        url: `https://wp-detector.com/blog/category/${frontmatter.category.slug}`,
+      },
+    },
+  },
+  twitter: {
+    title: frontmatter.title,
+    description: frontmatter.description,
+  },
+};
 ---
 
-<Layout title={frontmatter.title} description={frontmatter.description}>
+<Layout seo={seo}>
   <Header />
   <ProgressBar />
 

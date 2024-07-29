@@ -7,19 +7,30 @@ import PostCard from "../components/PostCard.astro";
 const allPosts = await Astro.glob("../pages/blog/*.md");
 
 const title = "WordPress Detector Blog";
-const description = "Comparisons, analysis, and reviews of WordPress themes, plugins, and services with the unique insight of our data.";
+const description =
+  "Comparisons, analysis, and reviews of WordPress themes, plugins, and services with the unique insight of our data.";
+
+const seo = {
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://wp-detector.com/blog",
+  },
+  twitter: {
+    title: title,
+    description: description,
+  },
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout seo={seo}>
   <Header />
   <section class="container">
     <h2 class="grid--title">Welcome to WordPress Detector <span>Blog</span></h2>
     <ul class="post--grid">
-      {
-        allPosts.map((post) => (
-          <PostCard post={post} />
-        ))
-      }
+      {allPosts.map((post) => <PostCard post={post} />)}
     </ul>
   </section>
   <Footer />

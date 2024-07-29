@@ -5,9 +5,23 @@ import Footer from "../components/Footer.astro";
 
 const title = "Report an Issue or Make a Suggestion";
 const description = "Report an Issue or Make a Suggestion - WordPress Detector";
+
+const seo = {
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://wp-detector.com/top-themes",
+  },
+  twitter: {
+    title: title,
+    description: description,
+  },
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout seo={seo}>
   <Header />
   <section class="container container__contact">
     <iframe

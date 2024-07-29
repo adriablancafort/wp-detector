@@ -7,10 +7,25 @@ import HomeText from "../components/HomeText.astro";
 import Footer from "../components/Footer.astro";
 
 const title = "Best WordPress Theme Detector - Free Online Tool";
-const description = "Ever came across a website and wondered if Is it WP or What WP theme is that website using? Just enter any website URL and WP detector will detect all WordPress theme and WordPress plugins it is using!";
+const description =
+  "Ever came across a website and wondered if Is it WP or What WP theme is that website using? Just enter any website URL and WP detector will detect all WordPress theme and WordPress plugins it is using!";
+
+const seo = {
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://wp-detector.com",
+  },
+  twitter: {
+    title: title,
+    description: description,
+  },
+};
 ---
 
-<Layout title={title} description={description} >
+<Layout seo={seo}>
   <Header />
   <InputHeadline />
   <Input />

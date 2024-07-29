@@ -12,20 +12,30 @@ const categoryPosts = allPosts.filter(
 
 const title = `${frontmatter.name} - All Posts on the WordPress Detector Blog`;
 const description = `All Blog Posts written by ${frontmatter.name}, Author on the WordPress Detector Blog`;
+
+const seo = {
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://wp-detector.com/top-themes",
+  },
+  twitter: {
+    title: title,
+    description: description,
+  },
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout seo={seo}>
   <Header />
   <section class="container">
     <h2 class="grid--title">
       Blog Posts by <span>{frontmatter.name}</span>
     </h2>
     <ul class="post--grid">
-      {
-        categoryPosts.map((post) => (
-          <PostCard post={post} />
-        ))
-      }
+      {categoryPosts.map((post) => <PostCard post={post} />)}
     </ul>
   </section>
   <Footer />
