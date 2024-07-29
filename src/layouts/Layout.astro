@@ -1,5 +1,12 @@
 ---
-const { title, description } = Astro.props;
+import metadata from "../metadata.json";
+import { SEO, type Props as SEOProps } from "astro-seo";
+
+interface Props {
+  seo?: SEOProps;
+}
+
+const { seo } = Astro.props;
 ---
 
 <!doctype html>
@@ -7,14 +14,68 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/images/wordpress-detector-favicon.svg"/>
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/images/wordpress-detector-favicon.svg"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      {...seo}
+      title={seo?.title ?? metadata.default.title}
+      description={seo?.description ?? metadata.default.description}
+      canonical={seo?.canonical ?? null}
+      noindex={seo?.noindex ?? metadata.default.noindex}
+      nofollow={seo?.nofollow ?? metadata.default.nofollow}
+      openGraph={{
+        title: seo?.openGraph?.title ?? metadata.default.openGraph.title,
+        description:
+          seo?.openGraph?.description ?? metadata.default.openGraph.description,
+        type: seo?.openGraph?.type ?? metadata.default.openGraph.type,
+        url: seo?.openGraph?.url ?? metadata.default.openGraph.url,
+        image: seo?.openGraph?.image ?? metadata.default.openGraph.image,
+        ...(seo?.openGraph?.article && {
+          article: {
+            modifiedTime: seo?.openGraph?.article?.modifiedTime ?? null,
+            authors: seo?.openGraph?.article?.authors ?? [],
+            section: seo?.openGraph?.article?.section ?? null,
+          },
+        }),
+      }}
+      twitter={{
+        title: seo?.twitter?.title ?? metadata.default.twitter.title,
+        description:
+          seo?.twitter?.description ?? metadata.default.twitter.description,
+        creator: seo?.twitter?.creator ?? metadata.default.twitter.creator,
+        card: seo?.twitter?.card ?? metadata.default.twitter.card,
+        site: seo?.twitter?.site ?? metadata.default.twitter.site,
+        image: seo?.twitter?.image ?? metadata.default.twitter.image,
+        imageAlt: seo?.twitter?.imageAlt ?? metadata.default.twitter.imageAlt,
+      }}
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/eb-garamond.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
     <slot />
