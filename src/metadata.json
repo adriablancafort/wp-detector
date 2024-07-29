@@ -1,0 +1,40 @@
+{
+    "default": {
+        "name": "WordPress Detector",
+        "title": "Best WordPress Theme Detector - Free Online Tool",
+        "description": "Ever came across a website and wondered if Is it WP or What WP theme is that website using? Just enter any website URL and WP detector will detect all WordPress theme and WordPress plugins it is using!",
+        "titleDefault": "Best WordPress Theme Detector - Free Online Tool",
+        "canonical": "https://wp-detector.com",
+        "noindex": false,
+        "nofollow": false,
+        "languageAlternates": [
+            {
+                "hrefLang": "en",
+                "href": "https://wp-detector.com/en"
+            }
+        ],
+        "openGraph": {
+            "title": "Best WordPress Theme Detector - Free Online Tool",
+            "description": "Ever came across a website and wondered if Is it WP or What WP theme is that website using? Just enter any website URL and WP detector will detect all WordPress theme and WordPress plugins it is using!",
+            "type": "website",
+            "url": "https://wp-detector.com",
+            "image": {
+                "url": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp.webp",
+                "secureUrl": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp.webp",
+                "type": "image/webp",
+                "width": 1200,
+                "height": 630,
+                "alt": "WordPress Theme and Plugin Detector"
+            }
+        },
+        "twitter": {
+            "title": "Best WordPress Theme Detector - Free Online Tool",
+            "description": "Ever came across a website and wondered if Is it WP or What WP theme is that website using? Just enter any website URL and WP detector will detect all WordPress theme and WordPress plugins it is using!",
+            "creator": "@WPDet",
+            "card": "summary_large_image",
+            "site": "@WPDet",
+            "image": "https://wp-detector.com/images/wordpress-theme-and-plugin-detector-free-online-tool.webp.webp",
+            "imageAlt": "WordPress Theme and Plugin Detector"
+        }
+    }
+}
