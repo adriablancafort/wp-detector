@@ -20,6 +20,10 @@ const seo = {
     description: frontmatter.description,
     type: "article",
     url: `https://wp-detector.com/blog/${frontmatter.slug}`,
+    image: {
+      url: frontmatter.image.source,
+      alt: frontmatter.image.alt,
+    },
     article: {
       modifiedTime: frontmatter.date,
       authors: [
@@ -37,6 +41,10 @@ const seo = {
   twitter: {
     title: frontmatter.title,
     description: frontmatter.description,
+    image: {
+      url: frontmatter.image.source,
+      alt: frontmatter.image.alt,
+    },
   },
 };
 ---
