@@ -28,7 +28,8 @@ const { seo } = Astro.props;
       noindex={seo?.noindex ?? metadata.default.noindex}
       nofollow={seo?.nofollow ?? metadata.default.nofollow}
       openGraph={{
-        basic: {
+
+basic: {
           title:
             seo?.openGraph?.title ??
             metadata.default.openGraph.title,

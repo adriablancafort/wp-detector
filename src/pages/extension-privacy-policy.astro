@@ -3,8 +3,22 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const title = "WordPress Detector - Privacy Policy";
-const description = "Privacy Policy page at WordPress Detector";
+const title = "WordPress Detector Browser Extension - Privacy Policy";
+const description = "Browser Extension Privacy Policy page at WordPress Detector";
+
+const seo = {
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://wp-detector.com/privacy-policy",
+  },
+  twitter: {
+    title: title,
+    description: description,
+  },
+};
 ---
 
 <Layout seo={seo}>
