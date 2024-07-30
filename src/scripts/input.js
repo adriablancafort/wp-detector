@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Show Extension Popup
                 setTimeout(() => {
                   dialog.showModal();
+
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                      event: "Show Extension Popup",
+                    });
                 }, 8000);
 
                 if (data.plugins.length) {
