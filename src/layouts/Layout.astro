@@ -83,14 +83,16 @@ const { seo } = Astro.props;
     <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
+    <slot />
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-P8BVRMBZ"
         height="0"
         width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
-    >
-    <slot />
+        style="display:none;visibility:hidden"
+      >
+      </iframe>
+    </noscript>
   </body>
 </html>
 
@@ -222,16 +224,7 @@ const { seo } = Astro.props;
     y.parentNode.insertBefore(t, y);
   })(window, document, "clarity", "script", "l5dfb7oih9");
 
-  // Google Analytics
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-HRVVKEVNRN");
-
-  // Second google tag manager
+  // Google Tag Manager
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -243,5 +236,3 @@ const { seo } = Astro.props;
     f.parentNode.insertBefore(j, f);
   })(window, document, "script", "dataLayer", "GTM-P8BVRMBZ");
 </script>
-
-<script src="https://www.googletagmanager.com/gtag/js?id=G-HRVVKEVNRN"></script>
