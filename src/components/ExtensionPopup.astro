@@ -63,6 +63,11 @@
       dialog.close();
     } else {
       window.open(storeUrl, "_blank");
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "Click Extension Popup",
+      });
     }
   });
 </script>
