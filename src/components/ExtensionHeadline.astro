@@ -4,14 +4,19 @@ import ExtensionPopup from "./ExtensionPopup.astro";
 ---
 
 <section class="container extension--container">
-  <h1 class="extension--title">Detect WordPress Themes and Plugins <em>as you browse!</em></h1>
-  <p class="extension--description">Install the WordPress Detector Brower Extension and know instantly the WordPress <strong>theme</strong> and WordPress <strong>plugins</strong> of every website you visit!</p>
+  <h1 class="extension--title">
+    Detect WordPress Themes and Plugins <em>as you browse!</em>
+  </h1>
+  <p class="extension--description">
+    Install the WordPress Detector Brower Extension and know instantly the
+    WordPress <strong>theme</strong> and WordPress <strong>plugins</strong> of every
+    website you visit!
+  </p>
   <a
     href="https://chromewebstore.google.com/detail/wordpress-theme-and-plugi/ckddhlieecghofpfojemicbieacljgji"
     target="_blank"
   >
-    <button class="button--extension">View on Chrome Store</button
-    >
+    <button class="button--extension">View on Chrome Store</button>
   </a>
   <div class="extension--video">
     <ExtensionVideo />
@@ -89,5 +94,10 @@ import ExtensionPopup from "./ExtensionPopup.astro";
   // Show Extension Popup
   setTimeout(() => {
     dialog.showModal();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "Show Extension Popup",
+    });
   }, 8000);
 </script>
