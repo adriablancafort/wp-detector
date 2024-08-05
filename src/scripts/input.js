@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({
-                      event: "Show Extension Popup",
+                      event: "show_extension_popup",
                     });
                 }, 8000);
 
