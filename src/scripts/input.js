@@ -53,6 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (theme.link) {
                       themeCard.addEventListener("click", () => {
                         window.open(theme.link, "_blank");
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                          event: "card_link_click",
+                          card_click_title: theme.title,
+                          card_click_url: theme.link,
+                          card_click_type: "theme",
+                        });
                       });
                     }
                     themesContainer.appendChild(themeCard);
@@ -82,6 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (plugin.link) {
                       pluginCard.addEventListener("click", () => {
                         window.open(plugin.link, "_blank");
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                          event: "card_link_click",
+                          card_click_title: plugin.title,
+                          card_click_url: plugin.link,
+                          card_click_type: "plugin",
+                        });
                       });
                     }
                     pluginsContainer.appendChild(pluginCard);
