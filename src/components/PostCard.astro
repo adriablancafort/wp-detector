@@ -19,9 +19,9 @@ const { post } = Astro.props;
     <p class="post-card--description">{post.frontmatter.description}</p>
 
     <p class="post-card--meta">
-      <a href={`/blog/author/${post.frontmatter.author.slug}`}
+      <a href={`/blog/author/${post.frontmatter.author.slug}/`}
         >{post.frontmatter.author.name}</a
-      > - <a href={`/blog/category/${post.frontmatter.category.slug}`}
+      > - <a href={`/blog/category/${post.frontmatter.category.slug}/`}
         >{post.frontmatter.category.name}</a
       > - {post.frontmatter.minutes} min
     </p>
