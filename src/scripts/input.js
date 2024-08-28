@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const themesContainer = document.getElementById("themesContainer");
   const pluginsContainer = document.getElementById("pluginsContainer");
 
+  // Create a dataLayer for Google Analytics events
+  window.dataLayer = window.dataLayer || [];
+
   // From Extension Popup
   const dialog = document.querySelector("dialog");
 
@@ -53,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (theme.link) {
                       themeCard.addEventListener("click", () => {
                         window.open(theme.link, "_blank");
-                        window.dataLayer = window.dataLayer || [];
+              
                         window.dataLayer.push({
                           event: "card_link_click",
                           card_click_title: theme.title,
@@ -76,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                   dialog.showModal();
 
-                    window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({
                       event: "show_extension_popup",
                     });
@@ -89,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (plugin.link) {
                       pluginCard.addEventListener("click", () => {
                         window.open(plugin.link, "_blank");
-                        window.dataLayer = window.dataLayer || [];
+              
                         window.dataLayer.push({
                           event: "card_link_click",
                           card_click_title: plugin.title,
@@ -148,6 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
             themesContainer.innerHTML = "";
             pluginsContainer.innerHTML = "";
           });
+
+        window.dataLayer.push({
+          event: "analyze_website",
+          analyze_website: inputUrl,
+        });
+
       } else {
         oldUrl = "";
         wpContainer.innerHTML = invalidUrl;
