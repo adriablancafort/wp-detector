@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.dataLayer.push({
           event: "analyze_website",
-          analyze_website: inputUrl,
+          analyze_website_url: inputUrl,
         });
 
       } else {
